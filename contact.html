@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên hệ - Petoria</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/product-detail.css">
+    <link rel="stylesheet" href="assets/css/about.css">
+    
+    <link rel="stylesheet" href="assets/css/products.css">
+    <link rel="stylesheet" href="assets/css/cart.css">
+    <link rel="stylesheet" href="assets/css/contact.css">
+    <link rel="stylesheet" href="assets/css/services.css">
+    
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐾</text></svg>">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <h1><i class="fas fa-paw"></i> Petoria</h1>
+                </a>
+            </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Trang chủ</a></li>
+                    <li><a href="products.html"><i class="fas fa-shopping-bag"></i> Sản phẩm</a></li>
+                    <li><a href="services.html"><i class="fas fa-concierge-bell"></i> Dịch vụ</a></li>
+                    <li><a href="about.html"><i class="fas fa-info-circle"></i> Về chúng tôi</a></li>
+                    <li><a href="contact.html" class="active"><i class="fas fa-address-book"></i> Liên hệ</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-right">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Tìm kiếm sản phẩm...">
+                    <button id="searchBtn"><i class="fas fa-search"></i></button>
+                </div>
+                
+                <div class="cart-icon">
+                    <a href="cart.html">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+                
+                <div class="user-actions">
+                    <div class="account-dropdown">
+                        <button class="account-btn" id="accountBtn">
+                            <i class="fas fa-user"></i>
+                            <span id="accountText">Tài khoản</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="dropdown-menu" id="accountDropdown">
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div class="mobile-nav">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Trang chủ</a></li>
+                <li><a href="products.html"><i class="fas fa-shopping-bag"></i> Sản phẩm</a></li>
+                <li><a href="services.html"><i class="fas fa-concierge-bell"></i> Dịch vụ</a></li>
+                <li><a href="about.html"><i class="fas fa-info-circle"></i> Về chúng tôi</a></li>
+                <li><a href="contact.html" class="active"><i class="fas fa-address-book"></i> Liên hệ</a></li>
+                <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Giỏ hàng</a></li>
+                <li><a href="#" id="mobileLoginBtn"><i class="fas fa-user"></i> Đăng nhập</a></li>
+                <li><a href="#" id="mobileRegisterBtn"><i class="fas fa-user-plus"></i> Đăng ký</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="contact-page">
+        <section class="page-hero">
+            <div class="container">
+                <h1>Liên hệ với chúng tôi</h1>
+                <p>Chúng tôi luôn sẵn sàng hỗ trợ bạn và thú cưng của mình</p>
+            </div>
+        </section>
+
+        <section class="contact-content">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-form-container">
+                        <h2><i class="fas fa-envelope"></i> Gửi tin nhắn cho chúng tôi</h2>
+                        <form id="contactForm" class="contact-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="contactName">Họ và tên *</label>
+                                    <input type="text" id="contactName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="contactEmail">Email *</label>
+                                    <input type="email" id="contactEmail" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="contactPhone">Số điện thoại *</label>
+                                    <input type="tel" id="contactPhone" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="contactSubject">Chủ đề *</label>
+                                    <select id="contactSubject" required>
+                                        <option value="">Chọn chủ đề</option>
+                                        <option value="product">Hỏi về sản phẩm</option>
+                                        <option value="service">Hỏi về dịch vụ</option>
+                                        <option value="booking">Đặt lịch hẹn</option>
+                                        <option value="support">Hỗ trợ kỹ thuật</option>
+                                        <option value="feedback">Phản hồi & Góp ý</option>
+                                        <option value="other">Khác</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contactMessage">Nội dung tin nhắn *</label>
+                                <textarea id="contactMessage" rows="6" required placeholder="Vui lòng mô tả chi tiết yêu cầu của bạn..."></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="checkbox">
+                                    <input type="checkbox" id="contactNewsletter" checked>
+                                    <span>Đăng ký nhận bản tin khuyến mãi từ Petoria</span>
+                                </label>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-block">
+                                <i class="fas fa-paper-plane"></i> Gửi tin nhắn
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <div class="contact-info-container">
+                        <h2><i class="fas fa-info-circle"></i> Thông tin liên hệ</h2>
+                        
+                        <div class="contact-info-list">
+                            <div class="contact-info-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h3>Địa chỉ cửa hàng</h3>
+                                    <p>123 Đường Petoria, Phường Bến Nghé, Quận 1, TP.HCM</p>
+                                    <a href="#map" class="btn-link">Xem trên bản đồ <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-info-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h3>Giờ làm việc</h3>
+                                    <p>Thứ 2 - Thứ 6: 8:00 - 20:00</p>
+                                    <p>Thứ 7: 8:00 - 18:00</p>
+                                    <p>Chủ nhật: 8:00 - 17:00</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-info-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h3>Điện thoại</h3>
+                                    <p>Hotline: 028 1234 5678</p>
+                                    <p>Hỗ trợ kỹ thuật: 028 8765 4321</p>
+                                    <p>Khẩn cấp: 0901 234 567</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-info-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h3>Email</h3>
+                                    <p>Thông tin chung: info@petoria.vn</p>
+                                    <p>Hỗ trợ khách hàng: support@petoria.vn</p>
+                                    <p>Đối tác: partner@petoria.vn</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="emergency-contact">
+                            <h3><i class="fas fa-exclamation-triangle"></i> Liên hệ khẩn cấp</h3>
+                            <p>Nếu thú cưng của bạn gặp tình trạng khẩn cấp, vui lòng gọi ngay:</p>
+                            <div class="emergency-number">
+                                <i class="fas fa-phone-alt"></i>
+                                <span>0901 234 567</span>
+                            </div>
+                            <p class="emergency-note">Đường dây nóng hoạt động 24/7</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="map" class="map-section">
+            <div class="container">
+                <h2 class="section-title">Vị trí của chúng tôi</h2>
+                <div class="map-container">
+                    <div class="map-placeholder">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <p>Bản đồ vị trí Petoria</p>
+                        <div class="map-details">
+                            <h3>Petoria - Quận 1</h3>
+                            <p>123 Đường Petoria, Phường Bến Nghé, Quận 1, TP.HCM</p>
+                            <div class="map-directions">
+                                <h4>Hướng dẫn đường đi:</h4>
+                                <ul>
+                                    <li>Từ công viên 23/9: Đi thẳng 500m</li>
+                                    <li>Từ chợ Bến Thành: Rẽ phải, đi 300m</li>
+                                    <li>Gần tòa nhà Bitexco Financial Tower</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="branches-list">
+                        <h3><i class="fas fa-store"></i> Các chi nhánh khác</h3>
+                        <div class="branch-item">
+                            <h4>Petoria - Quận 2</h4>
+                            <p><i class="fas fa-map-marker-alt"></i> 456 Đường Thảo Điền, Quận 2, TP.HCM</p>
+                            <p><i class="fas fa-phone"></i> 028 2345 6789</p>
+                        </div>
+                        <div class="branch-item">
+                            <h4>Petoria - Quận 7</h4>
+                            <p><i class="fas fa-map-marker-alt"></i> 789 Đường Nguyễn Thị Thập, Quận 7, TP.HCM</p>
+                            <p><i class="fas fa-phone"></i> 028 3456 7890</p>
+                        </div>
+                        <div class="branch-item">
+                            <h4>Petoria - Hà Nội</h4>
+                            <p><i class="fas fa-map-marker-alt"></i> 101 Đường Trần Duy Hưng, Quận Cầu Giấy, Hà Nội</p>
+                            <p><i class="fas fa-phone"></i> 024 4567 8901</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <div class="container">
+                <h2 class="section-title">Câu hỏi thường gặp</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Petoria có dịch vụ giao hàng tận nơi không?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Có, chúng tôi cung cấp dịch vụ giao hàng tận nơi trong nội thành TP.HCM và Hà Nội. Phí giao hàng từ 20.000₫ - 50.000₫ tùy khu vực. Đơn hàng từ 500.000₫ được miễn phí giao hàng.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Tôi có cần đặt lịch trước khi đến cửa hàng không?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Đối với dịch vụ chăm sóc thú cưng, chúng tôi khuyến khích đặt lịch trước để đảm bảo phục vụ tốt nhất. Đối với mua sắm sản phẩm, bạn có thể đến trực tiếp mà không cần đặt lịch.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Petoria có chính sách đổi trả như thế nào?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Chúng tôi chấp nhận đổi trả trong vòng 7 ngày nếu sản phẩm còn nguyên vẹn, chưa qua sử dụng và có hóa đơn mua hàng. 
+                                Một số sản phẩm đặc biệt như thức ăn mở bao bì không được đổi trả.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Làm thế nào để trở thành đối tác của Petoria?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Nếu bạn quan tâm đến việc hợp tác với Petoria, vui lòng gửi email đến partner@petoria.vn với thông tin về doanh nghiệp 
+                                và đề xuất hợp tác. Đội ngũ của chúng tôi sẽ liên hệ lại trong vòng 3-5 ngày làm việc.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Tôi có thể thanh toán bằng những phương thức nào?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Chúng tôi chấp nhận nhiều phương thức thanh toán: tiền mặt, thẻ Visa/Mastercard, ví điện tử (Momo, ZaloPay), chuyển 
+                                khoản ngân hàng và thanh toán qua Paypal.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="social-section">
+            <div class="container">
+                <h2 class="section-title">Kết nối với chúng tôi</h2>
+                <div class="social-links-large">
+                    <a href="#" class="social-link facebook">
+                        <i class="fab fa-facebook-f"></i>
+                        <span>Facebook</span>
+                        <p>Theo dõi cập nhật và khuyến mãi</p>
+                    </a>
+                    <a href="#" class="social-link instagram">
+                        <i class="fab fa-instagram"></i>
+                        <span>Instagram</span>
+                        <p>Hình ảnh thú cưng đáng yêu</p>
+                    </a>
+                    <a href="#" class="social-link youtube">
+                        <i class="fab fa-youtube"></i>
+                        <span>YouTube</span>
+                        <p>Video hướng dẫn chăm sóc</p>
+                    </a>
+                    <a href="#" class="social-link tiktok">
+                        <i class="fab fa-tiktok"></i>
+                        <span>TikTok</span>
+                        <p>Clip vui về thú cưng</p>
+                    </a>
+                    <a href="#" class="social-link zalo">
+                        <i class="fab fa-weixin"></i>
+                        <span>Zalo OA</span>
+                        <p>Nhắn tin tư vấn trực tiếp</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3><i class="fas fa-paw"></i> Petoria</h3>
+                    <p>Petoria - Thiên đường dành cho thú cưng của bạn. Chúng tôi cung cấp các sản phẩm và dịch vụ tốt nhất cho thú cưng.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/bdi.edu.vn/?locale=vi_VN"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Liên kết nhanh</h3>
+                    <ul>
+                        <li><a href="index.html">Trang chủ</a></li>
+                        <li><a href="products.html">Sản phẩm</a></li>
+                        <li><a href="services.html">Dịch vụ</a></li>
+                        <li><a href="about.html">Về chúng tôi</a></li>
+                        <li><a href="contact.html">Liên hệ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Chính sách</h3>
+                    <ul>
+                        <li><a href="#">Chính sách bảo mật</a></li>
+                        <li><a href="#">Điều khoản sử dụng</a></li>
+                        <li><a href="#">Chính sách đổi trả</a></li>
+                        <li><a href="#">Chính sách vận chuyển</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Liên hệ</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Số 79, đường ĐT 743, phường Bình Hòa, TP. Thuận An, tỉnh Bình Dương</p>
+                        <p><i class="fas fa-phone"></i> (028) 1234 5678</p>
+                        <p><i class="fas fa-envelope"></i> info@petoria.vn</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Petoria. Tất cả các quyền được bảo lưu.</p>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                    <i class="fab fa-cc-amex"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="authTitle">Đăng nhập</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+
+    <!-- JavaScript -->
+    <script src="assets/js/ma.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/cart.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const name = document.getElementById('contactName').value;
+                    const email = document.getElementById('contactEmail').value;
+                    const phone = document.getElementById('contactPhone').value;
+                    const subject = document.getElementById('contactSubject').value;
+                    const message = document.getElementById('contactMessage').value;
+                    
+                    if (!name || !email || !phone || !subject || !message) {
+                        showToast('Vui lòng điền đầy đủ thông tin bắt buộc', 'warning');
+                        return;
+                    }
+                    
+                    if (!isValidEmail(email)) {
+                        showToast('Email không hợp lệ', 'warning');
+                        return;
+                    }
+                    
+                    if (!isValidPhone(phone.replace(/\s/g, ''))) {
+                        showToast('Số điện thoại không hợp lệ', 'warning');
+                        return;
+                    }
+                    
+                    const submitBtn = contactForm.querySelector('button[type="submit"]');
+                    const originalText = submitBtn.innerHTML;
+                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Đang gửi...';
+                    submitBtn.disabled = true;
+                    
+                    setTimeout(() => {
+                        showToast('Tin nhắn của bạn đã được gửi thành công! Chúng tôi sẽ phản hồi trong thời gian sớm nhất.', 'success');
+                        
+                        contactForm.reset();
+                        
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+                    }, 1500);
+                });
+            }
+            
+            const phoneInput = document.getElementById('contactPhone');
+            if (phoneInput) {
+                phoneInput.addEventListener('input', function(e) {
+                    let value = e.target.value.replace(/\D/g, '');
+                    if (value.length > 0) {
+                        value = value.match(new RegExp('.{1,4}', 'g')).join(' ');
+                    }
+                    e.target.value = value;
+                });
+            }
+            
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const answer = this.nextElementSibling;
+                    const icon = this.querySelector('i');
+                    
+                    document.querySelectorAll('.faq-answer').forEach(item => {
+                        if (item !== answer) {
+                            item.style.maxHeight = null;
+                            item.previousElementSibling.querySelector('i').className = 'fas fa-chevron-down';
+                        }
+                    });
+                    
+                    if (answer.style.maxHeight) {
+                        answer.style.maxHeight = null;
+                        icon.className = 'fas fa-chevron-down';
+                    } else {
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                        icon.className = 'fas fa-chevron-up';
+                    }
+                });
+            });
+            
+            if (faqQuestions.length > 0) {
+                faqQuestions[0].click();
+            }
+            
+            const socialLinks = document.querySelectorAll('.social-link');
+            socialLinks.forEach(link => {
+                link.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                });
+                
+                link.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+            
+            const emergencyNumber = document.querySelector('.emergency-number');
+            if (emergencyNumber) {
+                let pulse = false;
+                setInterval(() => {
+                    emergencyNumber.style.color = pulse ? '#ff4757' : '#333';
+                    emergencyNumber.style.fontWeight = pulse ? 'bold' : 'normal';
+                    pulse = !pulse;
+                }, 1000);
+            }
+            
+            function isValidEmail(email) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailRegex.test(email);
+            }
+            
+            function isValidPhone(phone) {
+                const phoneRegex = /^(0[3|5|7|8|9])+([0-9]{8})$/;
+                return phoneRegex.test(phone);
+            }
+            
+            const branchItems = document.querySelectorAll('.branch-item');
+            branchItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    branchItems.forEach(branch => branch.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const branchName = this.querySelector('h4').textContent;
+                    const branchAddress = this.querySelector('p:nth-child(2)').textContent.replace('📍 ', '');
+                    const branchPhone = this.querySelector('p:nth-child(3)').textContent.replace('📞 ', '');
+                    
+                    showToast(`Đã chọn chi nhánh: ${branchName}. Địa chỉ: ${branchAddress}`, 'info');
+                });
+            });
+            
+            const mapPlaceholder = document.querySelector('.map-placeholder');
+            if (mapPlaceholder) {
+                mapPlaceholder.addEventListener('click', function() {
+                    showToast('Tính năng bản đồ chi tiết sẽ sớm được cập nhật!', 'info');
+                });
+            }
+        });
+    </script>
+<a href="#" class="back-to-top" id="backToTop">
+    <i class="fas fa-chevron-up"></i>
+</a>
+</body>
+</html>

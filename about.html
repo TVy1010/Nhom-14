@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Về chúng tôi - Petoria</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/product-detail.css">
+    <link rel="stylesheet" href="assets/css/about.css">
+
+    <link rel="stylesheet" href="assets/css/products.css">
+    <link rel="stylesheet" href="assets/css/cart.css">
+    <link rel="stylesheet" href="assets/css/contact.css">
+    <link rel="stylesheet" href="assets/css/services.css">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐾</text></svg>">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <h1><i class="fas fa-paw"></i> Petoria</h1>
+                </a>
+            </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Trang chủ</a></li>
+                    <li><a href="products.html"><i class="fas fa-shopping-bag"></i> Sản phẩm</a></li>
+                    <li><a href="services.html"><i class="fas fa-concierge-bell"></i> Dịch vụ</a></li>
+                    <li><a href="about.html" class="active"><i class="fas fa-info-circle"></i> Về chúng tôi</a></li>
+                    <li><a href="contact.html"><i class="fas fa-address-book"></i> Liên hệ</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-right">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Tìm kiếm sản phẩm...">
+                    <button id="searchBtn"><i class="fas fa-search"></i></button>
+                </div>
+                
+                <div class="cart-icon">
+                    <a href="cart.html">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+                
+                <div class="user-actions">
+                    <div class="account-dropdown">
+                        <button class="account-btn" id="accountBtn">
+                            <i class="fas fa-user"></i>
+                            <span id="accountText">Tài khoản</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="dropdown-menu" id="accountDropdown">
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div class="mobile-nav">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Trang chủ</a></li>
+                <li><a href="products.html"><i class="fas fa-shopping-bag"></i> Sản phẩm</a></li>
+                <li><a href="services.html"><i class="fas fa-concierge-bell"></i> Dịch vụ</a></li>
+                <li><a href="about.html" class="active"><i class="fas fa-info-circle"></i> Về chúng tôi</a></li>
+                <li><a href="contact.html"><i class="fas fa-address-book"></i> Liên hệ</a></li>
+                <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Giỏ hàng</a></li>
+                <li><a href="#" id="mobileLoginBtn"><i class="fas fa-user"></i> Đăng nhập</a></li>
+                <li><a href="#" id="mobileRegisterBtn"><i class="fas fa-user-plus"></i> Đăng ký</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="about-page">
+        <section class="page-hero">
+            <div class="container">
+                <h1>Về Petoria</h1>
+                <p>Hơn 10 năm đồng hành cùng tình yêu thú cưng</p>
+            </div>
+        </section>
+
+        <section class="our-story">
+            <div class="container">
+                <div class="story-content">
+                    <div class="story-text">
+                        <h2 class="section-title">Câu chuyện của chúng tôi</h2>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-year">2010</div>
+                                <div class="timeline-content">
+                                    <h3>Khởi đầu từ tình yêu thú cưng</h3>
+                                    <p>Petoria được thành lập bởi 3 người bạn cùng chung đam mê với thú cưng. Chúng tôi 
+                                        bắt đầu với một cửa hàng nhỏ tại quận 1, TP.HCM.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-year">2014</div>
+                                <div class="timeline-content">
+                                    <h3>Mở rộng dịch vụ</h3>
+                                    <p>Chúng tôi bổ sung các dịch vụ chăm sóc thú cưng chuyên nghiệp và trở thành một 
+                                        trong những trung tâm chăm sóc thú cưng đầu tiên tại Việt Nam.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-year">2018</div>
+                                <div class="timeline-content">
+                                    <h3>Phát triển chuỗi cửa hàng</h3>
+                                    <p>Petoria mở rộng với 5 chi nhánh tại TP.HCM và Hà Nội, trở thành thương hiệu tin 
+                                        cậy của hàng nghìn khách hàng.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-year">2023</div>
+                                <div class="timeline-content">
+                                    <h3>Hướng tới tương lai</h3>
+                                    <p>Chúng tôi tiếp tục phát triển với mục tiêu trở thành hệ sinh thái toàn diện nhất 
+                                        về thú cưng tại Việt Nam và khu vực.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="story-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-history"></i>
+                            <p>Hành trình 10 năm</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mission-section">
+            <div class="container">
+                <h2 class="section-title">Sứ mệnh & Tầm nhìn</h2>
+                <div class="mission-grid">
+                    <div class="mission-card">
+                        <div class="mission-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Sứ mệnh</h3>
+                        <p>Mang đến những sản phẩm và dịch vụ tốt nhất cho thú cưng, đồng thời nâng cao nhận thức về việc 
+                            chăm sóc và bảo vệ động vật.</p>
+                    </div>
+                    <div class="mission-card">
+                        <div class="mission-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3>Tầm nhìn</h3>
+                        <p>Trở thành hệ sinh thái toàn diện về thú cưng hàng đầu tại Việt Nam, góp phần xây dựng cộng đồng 
+                            yêu thương động vật.</p>
+                    </div>
+                    <div class="mission-card">
+                        <div class="mission-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3>Giá trị cốt lõi</h3>
+                        <p>Đặt tình yêu thương làm trung tâm, luôn đổi mới và cam kết mang đến trải nghiệm tốt nhất cho 
+                            khách hàng và thú cưng.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="team-section">
+            <div class="container">
+                <h2 class="section-title">Đội ngũ sáng lập</h2>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="member-image">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div class="member-info">
+                            <h3>Trần Mai Tường Vy</h3>
+                            <p class="member-position">Giám đốc điều hành</p>
+                            <p class="member-bio">Với 15 năm kinh nghiệm trong ngành thú y và 10 năm quản lý chuỗi cửa 
+                                hàng thú cưng. Tốt nghiệp Thạc sĩ Quản trị Kinh doanh tại Đại học Harvard.</p>
+                            <div class="member-contact">
+                                <p><i class="fas fa-envelope"></i> TuongVy@petoria.vn</p>
+                                <p><i class="fas fa-phone"></i> 0384 104 407</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-image">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <div class="member-info">                            
+                            <h3>Nguyễn Trọng Tín</h3>
+                            <p class="member-position">Giám đốc Chuyên môn</p>
+                            <p class="member-bio">Thạc sĩ Dinh dưỡng Động vật, chuyên tư vấn chế độ ăn cho thú cưng đặc 
+                                biệt. Có 12 năm kinh nghiệm làm việc tại các bệnh viện thú y lớn.</p>
+                            <div class="member-contact">
+                                <p><i class="fas fa-envelope"></i> NguyenTrongTin@petoria.vn</p>
+                                <p><i class="fas fa-phone"></i> 0902 345 678</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-image">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <div class="member-info">
+                            <h3>Tô Thanh Tùng</h3>
+                            <p class="member-position">Giám đốc Đào tạo</p>
+                            <p class="member-bio">Chuyên gia huấn luyện thú cưng với chứng chỉ quốc tế và 8 năm kinh 
+                                nghiệm. Đã huấn luyện thành công hơn 1000 thú cưng.</p>
+                            <div class="member-contact">
+                                <p><i class="fas fa-envelope"></i> ToThanhTung@petoria.vn</p>
+                                <p><i class="fas fa-phone"></i> 0903 456 789</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats-section">
+            <div class="container">
+                <h2 class="section-title">Petoria trong số</h2>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="5000">0</div>
+                        <div class="stat-label">Khách hàng hài lòng</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="2000">0</div>
+                        <div class="stat-label">Sản phẩm đa dạng</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="50">0</div>
+                        <div class="stat-label">Chuyên gia thú y</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="10">0</div>
+                        <div class="stat-label">Năm kinh nghiệm</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cert-section">
+            <div class="container">
+                <h2 class="section-title">Chứng nhận & Giải thưởng</h2>
+                <div class="cert-grid">
+                    <div class="cert-item">
+                        <div class="cert-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h3>ISO 9001:2015</h3>
+                        <p>Chứng nhận hệ thống quản lý chất lượng quốc tế</p>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-icon">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <h3>Thương hiệu vàng 2022</h3>
+                        <p>Được trao bởi Hiệp hội Thú y Việt Nam</p>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h3>Doanh nghiệp xuất sắc</h3>
+                        <p>Top 10 doanh nghiệp thú cưng hàng đầu Việt Nam</p>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>An toàn tuyệt đối</h3>
+                        <p>100% dịch vụ đạt tiêu chuẩn an toàn quốc tế</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonial-section">
+            <div class="container">
+                <h2 class="section-title">Khách hàng nói gì về chúng tôi</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"Petoria đã chăm sóc bé Corgi của tôi suốt 3 năm qua. Dịch vụ tuyệt vời, nhân viên nhiệt tình!"</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4>Chị Ngọc Anh</h4>
+                                <p>Khách hàng 5 năm</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"Cảm ơn Petoria đã cứu sống bé Mèo Mun của gia đình tôi. Đội ngũ bác sĩ rất chuyên nghiệp!"</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4>Anh Minh Đức</h4>
+                                <p>Khách hàng 2 năm</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"Sản phẩm tại Petoria luôn đảm bảo chất lượng. Tôi hoàn toàn yên tâm khi mua hàng ở đây."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4>Chị Thu Hà</h4>
+                                <p>Khách hàng 4 năm</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3><i class="fas fa-paw"></i> Petoria</h3>
+                    <p>Petoria - Thiên đường dành cho thú cưng của bạn. Chúng tôi cung cấp các sản phẩm và dịch vụ tốt nhất cho thú cưng.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/bdi.edu.vn/?locale=vi_VN"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/channel/UCy93cniJLuo2cwkbSl7JIJA"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Liên kết nhanh</h3>
+                    <ul>
+                        <li><a href="index.html">Trang chủ</a></li>
+                        <li><a href="products.html">Sản phẩm</a></li>
+                        <li><a href="services.html">Dịch vụ</a></li>
+                        <li><a href="about.html">Về chúng tôi</a></li>
+                        <li><a href="contact.html">Liên hệ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Chính sách</h3>
+                    <ul>
+                        <li><a href="#">Chính sách bảo mật</a></li>
+                        <li><a href="#">Điều khoản sử dụng</a></li>
+                        <li><a href="#">Chính sách đổi trả</a></li>
+                        <li><a href="#">Chính sách vận chuyển</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Liên hệ</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Số 79, đường ĐT 743, phường Bình Hòa, TP. Thuận An, tỉnh Bình Dương</p>
+                        <p><i class="fas fa-phone"></i> (028) 1234 5678</p>
+                        <p><i class="fas fa-envelope"></i> info@petoria.vn</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Petoria. Tất cả các quyền được bảo lưu.</p>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                    <i class="fab fa-cc-amex"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="authTitle">Đăng nhập</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="assets/js/ma.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/cart.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const statNumbers = document.querySelectorAll('.stat-number');
+            
+            const animateCounter = (element) => {
+                const target = parseInt(element.getAttribute('data-count'));
+                const duration = 2000; 
+                const increment = target / (duration / 16); 
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    element.textContent = Math.floor(current);
+                }, 16);
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounter(entry.target);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            statNumbers.forEach(stat => observer.observe(stat));
+            
+            const teamMembers = document.querySelectorAll('.team-member');
+            teamMembers.forEach(member => {
+                member.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px)';
+                    this.style.boxShadow = '0 10px 30px rgba(0,0,0,0.15)';
+                });
+                
+                member.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
+                });
+            });
+            
+            let currentTestimonial = 0;
+            const testimonials = document.querySelectorAll('.testimonial-card');
+            
+            function showTestimonial(index) {
+                testimonials.forEach((testimonial, i) => {
+                    testimonial.style.opacity = i === index ? '1' : '0.5';
+                    testimonial.style.transform = i === index ? 'scale(1.05)' : 'scale(1)';
+                });
+            }
+            
+            if (testimonials.length > 0) {
+                setInterval(() => {
+                    currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+                    showTestimonial(currentTestimonial);
+                }, 5000);
+                
+                testimonials.forEach((testimonial, index) => {
+                    testimonial.addEventListener('click', () => {
+                        currentTestimonial = index;
+                        showTestimonial(index);
+                    });
+                });
+                
+                showTestimonial(0);
+            }
+            
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            timelineItems.forEach((item, index) => {
+                item.style.animationDelay = `${index * 0.2}s`;
+            });
+            
+            const animateOnScroll = () => {
+                const elements = document.querySelectorAll('.mission-card, .cert-item');
+                
+                elements.forEach(element => {
+                    const position = element.getBoundingClientRect();
+                    
+                    if (position.top < window.innerHeight - 100) {
+                        element.classList.add('animated');
+                    }
+                });
+            };
+            
+            window.addEventListener('scroll', animateOnScroll);
+            animateOnScroll();
+        });
+    </script>
+    <a href="#" class="back-to-top" id="backToTop">
+    <i class="fas fa-chevron-up"></i>
+</a>
+</body>
+</html>

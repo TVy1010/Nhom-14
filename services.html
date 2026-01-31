@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dịch vụ - Petoria</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/product-detail.css">
+    <link rel="stylesheet" href="assets/css/about.css">
+    
+    <link rel="stylesheet" href="assets/css/products.css">
+    <link rel="stylesheet" href="assets/css/cart.css">
+    <link rel="stylesheet" href="assets/css/contact.css">
+    <link rel="stylesheet" href="assets/css/services.css">
+    
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐾</text></svg>">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <h1><i class="fas fa-paw"></i> Petoria</h1>
+                </a>
+            </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Trang chủ</a></li>
+                    <li><a href="products.html"><i class="fas fa-shopping-bag"></i> Sản phẩm</a></li>
+                    <li><a href="services.html" class="active"><i class="fas fa-concierge-bell"></i> Dịch vụ</a></li>
+                    <li><a href="about.html"><i class="fas fa-info-circle"></i> Về chúng tôi</a></li>
+                    <li><a href="contact.html"><i class="fas fa-address-book"></i> Liên hệ</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-right">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Tìm kiếm sản phẩm...">
+                    <button id="searchBtn"><i class="fas fa-search"></i></button>
+                </div>
+                
+                <div class="cart-icon">
+                    <a href="cart.html">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+                
+                <div class="user-actions">
+                    <div class="account-dropdown">
+                        <button class="account-btn" id="accountBtn">
+                            <i class="fas fa-user"></i>
+                            <span id="accountText">Tài khoản</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="dropdown-menu" id="accountDropdown">
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div class="mobile-nav">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Trang chủ</a></li>
+                <li><a href="products.html"><i class="fas fa-shopping-bag"></i> Sản phẩm</a></li>
+                <li><a href="services.html" class="active"><i class="fas fa-concierge-bell"></i> Dịch vụ</a></li>
+                <li><a href="about.html"><i class="fas fa-info-circle"></i> Về chúng tôi</a></li>
+                <li><a href="contact.html"><i class="fas fa-address-book"></i> Liên hệ</a></li>
+                <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Giỏ hàng</a></li>
+                <li><a href="#" id="mobileLoginBtn"><i class="fas fa-user"></i> Đăng nhập</a></li>
+                <li><a href="#" id="mobileRegisterBtn"><i class="fas fa-user-plus"></i> Đăng ký</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="services-page">
+        <section class="page-hero">
+            <div class="container">
+                <h1>Dịch vụ chăm sóc thú cưng</h1>
+                <p>Chúng tôi cung cấp các dịch vụ chăm sóc toàn diện cho thú cưng của bạn</p>
+            </div>
+        </section>
+
+        <section class="services-list">
+            <div class="container">
+                <div class="service-detail">
+                    <div class="service-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-cut"></i>
+                            <p>Dịch vụ chăm sóc & cắt tỉa</p>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h2><i class="fas fa-cut"></i> Chăm sóc & Cắt tỉa lông</h2>
+                        <p class="service-price">Giá: 150.000₫ - 500.000₫</p>
+                        <div class="service-description">
+                            <p>Dịch vụ chăm sóc toàn diện cho thú cưng của bạn bao gồm:</p>
+                            <ul>
+                                <li>Tắm rửa, vệ sinh sạch sẽ</li>
+                                <li>Cắt tỉa lông theo yêu cầu</li>
+                                <li>Cắt móng, vệ sinh tai</li>
+                                <li>Massage thư giãn</li>
+                                <li>Sấy khô, chải chuốt</li>
+                            </ul>
+                            <p>Đội ngũ nhân viên giàu kinh nghiệm, sử dụng sản phẩm chăm sóc an toàn, phù hợp với từng loại thú cưng.</p>
+                        </div>
+                        <a href="#booking" class="btn btn-primary">Đặt lịch ngay</a>
+                    </div>
+                </div>
+
+                <div class="service-detail reverse">
+                    <div class="service-content">
+                        <h2><i class="fas fa-stethoscope"></i> Khám chữa bệnh thú y</h2>
+                        <p class="service-price">Giá: 200.000₫ - 1.000.000₫</p>
+                        <div class="service-description">
+                            <p>Dịch vụ khám chữa bệnh với đội ngũ bác sĩ thú y giàu kinh nghiệm:</p>
+                            <ul>
+                                <li>Khám sức khỏe định kỳ</li>
+                                <li>Chẩn đoán và điều trị bệnh</li>
+                                <li>Tiêm phòng vaccine</li>
+                                <li>Tư vấn dinh dưỡng</li>
+                                <li>Phẫu thuật thú y</li>
+                                <li>Xét nghiệm, chụp X-quang</li>
+                            </ul>
+                            <p>Trang thiết bị hiện đại, phòng mổ vô trùng đạt tiêu chuẩn quốc tế.</p>
+                        </div>
+                        <a href="#booking" class="btn btn-primary">Đặt lịch khám</a>
+                    </div>
+                    <div class="service-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-stethoscope"></i>
+                            <p>Khám chữa bệnh thú y</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-detail">
+                    <div class="service-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-home"></i>
+                            <p>Trông giữ thú cưng</p>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h2><i class="fas fa-home"></i> Trông giữ thú cưng</h2>
+                        <p class="service-price">Giá: 100.000₫/ngày</p>
+                        <div class="service-description">
+                            <p>Dịch vụ trông giữ thú cưng khi bạn đi công tác hoặc du lịch:</p>
+                            <ul>
+                                <li>Không gian rộng rãi, thoáng mát</li>
+                                <li>Chế độ ăn uống phù hợp</li>
+                                <li>Vui chơi, tập thể dục hàng ngày</li>
+                                <li>Theo dõi sức khỏe 24/7</li>
+                                <li>Camera giám sát trực tuyến</li>
+                            </ul>
+                            <p>Chúng tôi có khu vực riêng biệt cho chó, mèo và các loại thú cưng khác.</p>
+                        </div>
+                        <a href="#booking" class="btn btn-primary">Đặt chỗ ngay</a>
+                    </div>
+                </div>
+
+                <div class="service-detail reverse">
+                    <div class="service-content">
+                        <h2><i class="fas fa-graduation-cap"></i> Huấn luyện thú cưng</h2>
+                        <p class="service-price">Giá: 2.000.000₫ - 5.000.000₫/khóa</p>
+                        <div class="service-description">
+                            <p>Các khóa huấn luyện từ cơ bản đến nâng cao:</p>
+                            <ul>
+                                <li>Khóa cơ bản: Vệ sinh đúng chỗ, nghe lời chủ</li>
+                                <li>Khóa nâng cao: Các lệnh phức tạp</li>
+                                <li>Huấn luyện hành vi: Sửa các thói quen xấu</li>
+                                <li>Huấn luyện chó bảo vệ</li>
+                                <li>Huấn luyện cho các cuộc thi</li>
+                            </ul>
+                            <p>Huấn luyện viên có chứng chỉ quốc tế, phương pháp huấn luyện nhân văn.</p>
+                        </div>
+                        <a href="#booking" class="btn btn-primary">Đăng ký khóa học</a>
+                    </div>
+                    <div class="service-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-graduation-cap"></i>
+                            <p>Huấn luyện thú cưng</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="other-services">
+            <div class="container">
+                <h2 class="section-title">Dịch vụ khác</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-taxi"></i>
+                        </div>
+                        <h3>Vận chuyển thú cưng</h3>
+                        <p>Dịch vụ vận chuyển an toàn, xe chuyên dụng có điều hòa</p>
+                        <p class="service-price-small">Từ 200.000₫</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        <h3>Chụp ảnh thú cưng</h3>
+                        <p>Chụp ảnh nghệ thuật, album kỷ niệm cho thú cưng</p>
+                        <p class="service-price-small">Từ 500.000₫</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-birthday-cake"></i>
+                        </div>
+                        <h3>Tổ chức tiệc sinh nhật</h3>
+                        <p>Tổ chức tiệc sinh nhật đáng nhớ cho thú cưng của bạn</p>
+                        <p class="service-price-small">Từ 1.000.000₫</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-paw"></i>
+                        </div>
+                        <h3>Tư vấn chọn thú cưng</h3>
+                        <p>Tư vấn chọn thú cưng phù hợp với gia đình bạn</p>
+                        <p class="service-price-small">Miễn phí</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="booking" class="booking-section">
+            <div class="container">
+                <h2 class="section-title">Đặt lịch dịch vụ</h2>
+                <div class="booking-form-container">
+                    <form id="bookingForm" class="booking-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="bookingName">Họ và tên *</label>
+                                <input type="text" id="bookingName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="bookingPhone">Số điện thoại *</label>
+                                <input type="tel" id="bookingPhone" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="bookingEmail">Email *</label>
+                                <input type="email" id="bookingEmail" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="bookingPetName">Tên thú cưng *</label>
+                                <input type="text" id="bookingPetName" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="bookingPetType">Loại thú cưng *</label>
+                                <select id="bookingPetType" required>
+                                    <option value="">Chọn loại thú cưng</option>
+                                    <option value="dog">Chó</option>
+                                    <option value="cat">Mèo</option>
+                                    <option value="bird">Chim</option>
+                                    <option value="other">Khác</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="bookingService">Dịch vụ *</label>
+                                <select id="bookingService" required>
+                                    <option value="">Chọn dịch vụ</option>
+                                    <option value="grooming">Chăm sóc & Cắt tỉa</option>
+                                    <option value="vet">Khám chữa bệnh</option>
+                                    <option value="boarding">Trông giữ</option>
+                                    <option value="training">Huấn luyện</option>
+                                    <option value="transport">Vận chuyển</option>
+                                    <option value="other">Dịch vụ khác</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="bookingDate">Ngày hẹn *</label>
+                                <input type="date" id="bookingDate" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="bookingTime">Giờ hẹn *</label>
+                                <select id="bookingTime" required>
+                                    <option value="">Chọn khung giờ</option>
+                                    <option value="8-10">8:00 - 10:00</option>
+                                    <option value="10-12">10:00 - 12:00</option>
+                                    <option value="13-15">13:00 - 15:00</option>
+                                    <option value="15-17">15:00 - 17:00</option>
+                                    <option value="17-19">17:00 - 19:00</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="bookingNotes">Ghi chú thêm</label>
+                            <textarea id="bookingNotes" rows="4" placeholder="Vui lòng mô tả tình trạng của thú cưng hoặc yêu cầu đặc biệt..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-block">Đặt lịch ngay</button>
+                    </form>
+                    
+                    <div class="booking-info">
+                        <h3><i class="fas fa-info-circle"></i> Thông tin đặt lịch</h3>
+                        <div class="info-item">
+                            <h4><i class="fas fa-clock"></i> Giờ làm việc</h4>
+                            <p>Thứ 2 - Thứ 6: 8:00 - 20:00</p>
+                            <p>Thứ 7 - Chủ nhật: 8:00 - 18:00</p>
+                        </div>
+                        <div class="info-item">
+                            <h4><i class="fas fa-phone"></i> Liên hệ khẩn cấp</h4>
+                            <p>Hotline: 0901 234 567</p>
+                            <p>Email: service@petoria.vn</p>
+                        </div>
+                        <div class="info-item">
+                            <h4><i class="fas fa-exclamation-circle"></i> Lưu ý</h4>
+                            <ul>
+                                <li>Vui lòng đến đúng giờ hẹn</li>
+                                <li>Mang theo hồ sơ tiêm phòng nếu có</li>
+                                <li>Thông báo trước nếu hủy lịch</li>
+                                <li>Thanh toán tại cửa hàng</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3><i class="fas fa-paw"></i> Petoria</h3>
+                    <p>Petoria - Thiên đường dành cho thú cưng của bạn. Chúng tôi cung cấp các sản phẩm và dịch vụ tốt nhất cho thú cưng.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/bdi.edu.vn/?locale=vi_VN"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/channel/UCy93cniJLuo2cwkbSl7JIJA"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Liên kết nhanh</h3>
+                    <ul>
+                        <li><a href="index.html">Trang chủ</a></li>
+                        <li><a href="products.html">Sản phẩm</a></li>
+                        <li><a href="services.html">Dịch vụ</a></li>
+                        <li><a href="about.html">Về chúng tôi</a></li>
+                        <li><a href="contact.html">Liên hệ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Chính sách</h3>
+                    <ul>
+                        <li><a href="#">Chính sách bảo mật</a></li>
+                        <li><a href="#">Điều khoản sử dụng</a></li>
+                        <li><a href="#">Chính sách đổi trả</a></li>
+                        <li><a href="#">Chính sách vận chuyển</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Liên hệ</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Số 79, đường ĐT 743, phường Bình Hòa, TP. Thuận An, tỉnh Bình Dương</p>
+                        <p><i class="fas fa-phone"></i> (028) 1234 5678</p>
+                        <p><i class="fas fa-envelope"></i> info@petoria.vn</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Petoria. Tất cả các quyền được bảo lưu.</p>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                    <i class="fab fa-cc-amex"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="authTitle">Đăng nhập</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="assets/js/ma.js"></script>
+    <script src="assets/js/auth.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const today = new Date().toISOString().split('T')[0];
+            const bookingDate = document.getElementById('bookingDate');
+            if (bookingDate) {
+                bookingDate.min = today;
+                
+                const tomorrow = new Date();
+                tomorrow.setDate(tomorrow.getDate() + 1);
+                bookingDate.value = tomorrow.toISOString().split('T')[0];
+            }
+            
+            const bookingForm = document.getElementById('bookingForm');
+            if (bookingForm) {
+                bookingForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const name = document.getElementById('bookingName').value;
+                    const phone = document.getElementById('bookingPhone').value;
+                    const email = document.getElementById('bookingEmail').value;
+                    const petName = document.getElementById('bookingPetName').value;
+                    const service = document.getElementById('bookingService').value;
+                    const date = document.getElementById('bookingDate').value;
+                    const time = document.getElementById('bookingTime').value;
+                    
+                    if (!name || !phone || !email || !petName || !service || !date || !time) {
+                        showToast('Vui lòng điền đầy đủ thông tin bắt buộc', 'warning');
+                        return;
+                    }
+                    
+                    const formattedDate = new Date(date).toLocaleDateString('vi-VN', {
+                        weekday: 'long',
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                    });
+                    
+                    const serviceSelect = document.getElementById('bookingService');
+                    const serviceName = serviceSelect.options[serviceSelect.selectedIndex].text;
+                    
+                    const timeSelect = document.getElementById('bookingTime');
+                    const timeText = timeSelect.options[timeSelect.selectedIndex].text;
+                    
+                    showToast(`Đã đặt lịch ${serviceName} cho ${petName} vào ${formattedDate}, ${timeText}. Chúng tôi sẽ liên hệ xác nhận!`, 'success');
+                    
+                    bookingForm.reset();
+                    
+                    const tomorrow = new Date();
+                    tomorrow.setDate(tomorrow.getDate() + 1);
+                    bookingDate.value = tomorrow.toISOString().split('T')[0];
+                });
+            }
+            
+            const phoneInput = document.getElementById('bookingPhone');
+            if (phoneInput) {
+                phoneInput.addEventListener('input', function(e) {
+                    let value = e.target.value.replace(/\D/g, '');
+                    if (value.length > 0) {
+                        value = value.match(new RegExp('.{1,4}', 'g')).join(' ');
+                    }
+                    e.target.value = value;
+                });
+            }
+            
+            const priceElements = document.querySelectorAll('.service-price, .service-price-small');
+            priceElements.forEach(element => {
+                element.addEventListener('mouseenter', function() {
+                    this.title = 'Giá có thể thay đổi tùy thuộc vào kích thước và tình trạng thú cưng';
+                });
+            });
+        });
+    </script>
+<a href="#" class="back-to-top" id="backToTop">
+    <i class="fas fa-chevron-up"></i>
+</a>
+</body>
+</html>

@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sản phẩm - Petoria</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/product-detail.css">
+    <link rel="stylesheet" href="assets/css/about.css">
+    
+    <link rel="stylesheet" href="assets/css/products.css">
+    <link rel="stylesheet" href="assets/css/cart.css">
+    <link rel="stylesheet" href="assets/css/contact.css">
+    <link rel="stylesheet" href="assets/css/services.css">
+    
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐾</text></svg>">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <h1><i class="fas fa-paw"></i> Petoria</h1>
+                </a>
+            </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Trang chủ</a></li>
+                    <li><a href="products.html" class="active"><i class="fas fa-shopping-bag"></i> Sản phẩm</a></li>
+                    <li><a href="services.html"><i class="fas fa-concierge-bell"></i> Dịch vụ</a></li>
+                    <li><a href="about.html"><i class="fas fa-info-circle"></i> Về chúng tôi</a></li>
+                    <li><a href="contact.html"><i class="fas fa-address-book"></i> Liên hệ</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-right">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Tìm kiếm sản phẩm...">
+                    <button id="searchBtn"><i class="fas fa-search"></i></button>
+                </div>
+                
+                <div class="cart-icon">
+                    <a href="cart.html">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+                
+                <div class="user-actions">
+                    <div class="account-dropdown">
+                        <button class="account-btn" id="accountBtn">
+                            <i class="fas fa-user"></i>
+                            <span id="accountText">Tài khoản</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="dropdown-menu" id="accountDropdown">
+
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div class="mobile-nav">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Trang chủ</a></li>
+                <li><a href="products.html" class="active"><i class="fas fa-shopping-bag"></i> Sản phẩm</a></li>
+                <li><a href="services.html"><i class="fas fa-concierge-bell"></i> Dịch vụ</a></li>
+                <li><a href="about.html"><i class="fas fa-info-circle"></i> Về chúng tôi</a></li>
+                <li><a href="contact.html"><i class="fas fa-address-book"></i> Liên hệ</a></li>
+                <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Giỏ hàng</a></li>
+                <li><a href="#" id="mobileLoginBtn"><i class="fas fa-user"></i> Đăng nhập</a></li>
+                <li><a href="#" id="mobileRegisterBtn"><i class="fas fa-user-plus"></i> Đăng ký</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="products-page">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="index.html">Trang chủ</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Sản phẩm</span>
+            </nav>
+
+        <div class="page-header"> 
+            <h1>Sản phẩm cho thú cưng</h1>
+            <p>Tìm kiếm sản phẩm phù hợp cho thú cưng của bạn</p>
+        </div>
+            
+
+            <div class="products-content">
+
+                <aside class="products-sidebar">
+                    <div class="filter-section">
+                        <div class="filter-header">
+                            <h3><i class="fas fa-filter"></i> Bộ lọc</h3>
+                            <button id="collapseAllFilters" class="collapse-btn">Thu gọn tất cả</button>
+                        </div>
+                        
+                        <div class="filter-group accordion active">
+                            <div class="filter-header accordion-header">
+                                <h4><i class="fas fa-paw"></i> Loại thú cưng</h4>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="filter-options accordion-content">
+                                <div class="filter-options-grid">
+                                    <label class="filter-chip" data-category="all">
+                                        <input type="checkbox" name="category" value="all" checked hidden>
+                                        <span>Tất cả</span>
+                                    </label>
+                                    <label class="filter-chip" data-category="dog">
+                                        <input type="checkbox" name="category" value="dog" hidden>
+                                        <span><i class="fas fa-dog"></i> Chó</span>
+                                    </label>
+                                    <label class="filter-chip" data-category="cat">
+                                        <input type="checkbox" name="category" value="cat" hidden>
+                                        <span><i class="fas fa-cat"></i> Mèo</span>
+                                    </label>
+                                    <label class="filter-chip" data-category="fish">
+                                        <input type="checkbox" name="category" value="fish" hidden>
+                                        <span><i class="fas fa-fish"></i> Thủy sinh</span>
+                                    </label>
+                                    <label class="filter-chip" data-category="bird">
+                                        <input type="checkbox" name="category" value="bird" hidden>
+                                        <span><i class="fas fa-dove"></i> Chim</span>
+                                    </label>
+                                    <label class="filter-chip" data-category="smallpet">
+                                        <input type="checkbox" name="category" value="smallpet" hidden>
+                                        <span><i class="fas fa-otter"></i> Thú nhỏ</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="filter-group accordion active">
+                            <div class="filter-header accordion-header">
+                                <h4><i class="fas fa-tags"></i> Danh mục</h4>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="filter-options accordion-content">
+                                <div class="filter-chips">
+                                    <button class="chip active" data-type="all">Tất cả</button>
+                                    <button class="chip" data-type="food"><i class="fas fa-utensils"></i> Thức ăn</button>
+                                    <button class="chip" data-type="toy"><i class="fas fa-baseball-ball"></i> Đồ chơi</button>
+                                    <button class="chip" data-type="accessory"><i class="fas fa-tshirt"></i> Phụ kiện</button>
+                                    <button class="chip" data-type="health"><i class="fas fa-heartbeat"></i> Sức khỏe</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="filter-group accordion">
+                            <div class="filter-header accordion-header">
+                                <h4><i class="fas fa-money-bill-wave"></i> Khoảng giá</h4>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="filter-options accordion-content">
+                                <div class="price-range">
+                                    <div class="price-inputs">
+                                        <input type="number" id="minPrice" placeholder="Min" value="0" min="0" max="1000000">
+                                        <span>đến</span>
+                                        <input type="number" id="maxPrice" placeholder="Max" value="500000" min="0" max="1000000">
+                                    </div>
+                                    <div class="price-slider">
+                                        <div class="slider-track"></div>
+                                        <input type="range" id="priceRangeMin" min="0" max="1000000" value="0" step="10000">
+                                        <input type="range" id="priceRangeMax" min="0" max="1000000" value="500000" step="10000">
+                                    </div>
+                                    <div class="price-display">
+                                        <span id="currentMinPrice">0₫</span>
+                                        <span id="currentMaxPrice">500.000₫</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="filter-group accordion">
+                            <div class="filter-header accordion-header">
+                                <h4><i class="fas fa-copyright"></i> Thương hiệu</h4>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="filter-options accordion-content">
+                                <div class="brand-filters">
+                                    <label class="brand-option">
+                                        <input type="checkbox" name="brand" value="royal-canin">
+                                        <span class="brand-checkbox"></span>
+                                        <span class="brand-name">Royal Canin</span>
+                                    </label>
+                                    <label class="brand-option">
+                                        <input type="checkbox" name="brand" value="whiskas">
+                                        <span class="brand-checkbox"></span>
+                                        <span class="brand-name">Whiskas</span>
+                                    </label>
+                                    <label class="brand-option">
+                                        <input type="checkbox" name="brand" value="pedigree">
+                                        <span class="brand-checkbox"></span>
+                                        <span class="brand-name">Pedigree</span>
+                                    </label>
+                                    <label class="brand-option">
+                                        <input type="checkbox" name="brand" value="petstar">
+                                        <span class="brand-checkbox"></span>
+                                        <span class="brand-name">Petstar</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="filter-group accordion">
+                            <div class="filter-header accordion-header">
+                                <h4><i class="fas fa-star"></i> Đánh giá</h4>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="filter-options accordion-content">
+                                <div class="rating-filters">
+                                    <label class="rating-option">
+                                        <input type="radio" name="rating" value="4.5">
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                            <span>4.5+ (128)</span>
+                                        </div>
+                                    </label>
+                                    <label class="rating-option">
+                                        <input type="radio" name="rating" value="4">
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            <span>4.0+ (95)</span>
+                                        </div>
+                                    </label>
+                                    <label class="rating-option">
+                                        <input type="radio" name="rating" value="3.5">
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                            <i class="far fa-star"></i>
+                                            <span>3.5+ (56)</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="filter-actions sticky">
+                            <div class="selected-filters" id="selectedFilters">
+                            </div>
+                            <div class="action-buttons">
+                                <button id="applyFilters" class="btn btn-primary">
+                                    <i class="fas fa-check"></i> Áp dụng
+                                </button>
+                                <button id="resetFilters" class="btn btn-outline">
+                                    <i class="fas fa-redo"></i> Xóa hết
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    <div class="featured-sidebar">
+                        <h3><i class="fas fa-fire"></i> Bán chạy nhất</h3>
+                        <div class="featured-list" id="sidebarFeatured">
+                        </div>
+                    </div>
+                </aside>
+                
+                <div class="products-main">
+                    <div class="products-header">
+                        <div class="products-info">
+                            <p id="productsCount">Hiển thị <span>0</span> sản phẩm</p>
+                        </div>
+                        <div class="products-sort">
+                            <label for="sortBy">Sắp xếp theo:</label>
+                            <select id="sortBy">
+                                <option value="default">Mặc định</option>
+                                <option value="price-asc">Giá: Thấp đến cao</option>
+                                <option value="price-desc">Giá: Cao đến thấp</option>
+                                <option value="name-asc">Tên: A-Z</option>
+                                <option value="name-desc">Tên: Z-A</option>
+                                <option value="newest">Mới nhất</option>
+                                <option value="popular">Bán chạy</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="products-grid" id="productsGrid">
+                    </div>
+                    
+                    <div class="pagination">
+                        <button class="pagination-btn prev" disabled>
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <div class="pagination-numbers">
+                            <button class="page-btn active">1</button>
+                            <button class="page-btn">2</button>
+                            <button class="page-btn">3</button>
+                            <span>...</span>
+                            <button class="page-btn">10</button>
+                        </div>
+                        <button class="pagination-btn next">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3><i class="fas fa-paw"></i> Petoria</h3>
+                    <p>Petoria - Thiên đường dành cho thú cưng của bạn. Chúng tôi cung cấp các sản phẩm và dịch vụ tốt nhất cho thú cưng.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/bdi.edu.vn/?locale=vi_VN"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/channel/UCy93cniJLuo2cwkbSl7JIJA"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Liên kết nhanh</h3>
+                    <ul>
+                        <li><a href="index.html">Trang chủ</a></li>
+                        <li><a href="products.html">Sản phẩm</a></li>
+                        <li><a href="services.html">Dịch vụ</a></li>
+                        <li><a href="about.html">Về chúng tôi</a></li>
+                        <li><a href="contact.html">Liên hệ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Chính sách</h3>
+                    <ul>
+                        <li><a href="#">Chính sách bảo mật</a></li>
+                        <li><a href="#">Điều khoản sử dụng</a></li>
+                        <li><a href="#">Chính sách đổi trả</a></li>
+                        <li><a href="#">Chính sách vận chuyển</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Liên hệ</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Số 79, đường ĐT 743, phường Bình Hòa, TP. Thuận An, tỉnh Bình Dương</p>
+                        <p><i class="fas fa-phone"></i> (028) 1234 5678</p>
+                        <p><i class="fas fa-envelope"></i> info@petoria.vn</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Petoria. Tất cả các quyền được bảo lưu.</p>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                    <i class="fab fa-cc-amex"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="authModal" class="modal">
+    </div>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="assets/js/ma.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/products.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof initProductsPage === 'function') {
+                initProductsPage();
+            }
+            
+            const urlParams = new URLSearchParams(window.location.search);
+            const searchQuery = urlParams.get('search');
+            const category = urlParams.get('category');
+            
+            if (searchQuery) {
+                document.getElementById('searchInput').value = searchQuery;
+                if (typeof searchProducts === 'function') {
+                    searchProducts(searchQuery);
+                }
+            }
+            
+            if (category) {
+                const categoryCheckbox = document.querySelector(`.filter-chip[data-category="${category}"]`);
+                if (categoryCheckbox) {
+                    categoryCheckbox.click();
+                }
+            }
+            
+            const applyFiltersBtn = document.getElementById('applyFilters');
+            if (applyFiltersBtn) {
+                applyFiltersBtn.addEventListener('click', applyFilters);
+            }
+            
+            const resetFiltersBtn = document.getElementById('resetFilters');
+            if (resetFiltersBtn) {
+                resetFiltersBtn.addEventListener('click', resetFilters);
+            }
+            
+            const sortSelect = document.getElementById('sortBy');
+            if (sortSelect) {
+                sortSelect.addEventListener('change', sortProducts);
+            }
+            
+            initFilters();
+        });
+        
+        function initFilters() {
+            document.querySelectorAll('.accordion-header').forEach(header => {
+                header.addEventListener('click', () => {
+                    const accordion = header.parentElement;
+                    accordion.classList.toggle('active');
+                });
+            });
+            
+            document.getElementById('collapseAllFilters')?.addEventListener('click', () => {
+                document.querySelectorAll('.accordion').forEach(acc => {
+                    acc.classList.remove('active');
+                });
+            });
+            
+            document.querySelectorAll('.chip').forEach(chip => {
+                chip.addEventListener('click', function() {
+                    const type = this.dataset.type;
+                    document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const input = document.querySelector(`input[name="type"][value="${type}"]`);
+                    if (input) {
+                        document.querySelectorAll('input[name="type"]').forEach(inp => inp.checked = false);
+                        input.checked = true;
+                    }
+                    
+                    updateSelectedFiltersDisplay();
+                });
+            });
+            
+            document.querySelectorAll('.filter-chip').forEach(chip => {
+                chip.addEventListener('click', function() {
+                    const category = this.dataset.category;
+                    const input = this.querySelector('input');
+                    
+                    if (category === 'all') {
+                        document.querySelectorAll('.filter-chip input').forEach(inp => {
+                            inp.checked = false;
+                        });
+                        input.checked = true;
+                    } else {
+                        document.querySelector('.filter-chip[data-category="all"] input').checked = false;
+                        input.checked = !input.checked;
+                    }
+                    
+                    updateSelectedFiltersDisplay();
+                });
+            });
+            
+            const minPriceInput = document.getElementById('minPrice');
+            const maxPriceInput = document.getElementById('maxPrice');
+            const minSlider = document.getElementById('priceRangeMin');
+            const maxSlider = document.getElementById('priceRangeMax');
+            const currentMinPrice = document.getElementById('currentMinPrice');
+            const currentMaxPrice = document.getElementById('currentMaxPrice');
+            
+            function updatePriceDisplay() {
+                if (currentMinPrice && currentMaxPrice) {
+                    currentMinPrice.textContent = formatPrice(parseInt(minSlider.value)) + '₫';
+                    currentMaxPrice.textContent = formatPrice(parseInt(maxSlider.value)) + '₫';
+                }
+                if (minPriceInput && maxPriceInput) {
+                    minPriceInput.value = minSlider.value;
+                    maxPriceInput.value = maxSlider.value;
+                }
+                updateSelectedFiltersDisplay();
+            }
+            
+            if (minSlider && maxSlider) {
+                minSlider.addEventListener('input', function() {
+                    if (parseInt(this.value) > parseInt(maxSlider.value)) {
+                        maxSlider.value = this.value;
+                    }
+                    updatePriceDisplay();
+                });
+                
+                maxSlider.addEventListener('input', function() {
+                    if (parseInt(this.value) < parseInt(minSlider.value)) {
+                        minSlider.value = this.value;
+                    }
+                    updatePriceDisplay();
+                });
+            }
+            
+            if (minPriceInput && maxPriceInput) {
+                minPriceInput.addEventListener('change', function() {
+                    if (minSlider) {
+                        minSlider.value = this.value;
+                        updatePriceDisplay();
+                    }
+                });
+                
+                maxPriceInput.addEventListener('change', function() {
+                    if (maxSlider) {
+                        maxSlider.value = this.value;
+                        updatePriceDisplay();
+                    }
+                });
+            }
+            
+            document.querySelectorAll('.brand-option input').forEach(checkbox => {
+                checkbox.addEventListener('change', updateSelectedFiltersDisplay);
+            });
+            
+            document.querySelectorAll('.rating-option input').forEach(radio => {
+                radio.addEventListener('change', updateSelectedFiltersDisplay);
+            });
+            
+            const mobileFilterToggle = document.createElement('button');
+            mobileFilterToggle.className = 'mobile-filter-toggle';
+            mobileFilterToggle.innerHTML = '<i class="fas fa-filter"></i>';
+            mobileFilterToggle.style.display = 'none';
+            document.body.appendChild(mobileFilterToggle);
+            
+            const filterOverlay = document.createElement('div');
+            filterOverlay.className = 'filter-overlay';
+            document.body.appendChild(filterOverlay);
+            
+            if (window.innerWidth <= 992) {
+                mobileFilterToggle.style.display = 'flex';
+                
+                mobileFilterToggle.addEventListener('click', () => {
+                    document.querySelector('.products-sidebar').classList.add('active');
+                    filterOverlay.classList.add('active');
+                });
+                
+                filterOverlay.addEventListener('click', () => {
+                    document.querySelector('.products-sidebar').classList.remove('active');
+                    filterOverlay.classList.remove('active');
+                });
+            }
+            
+            updateSelectedFiltersDisplay();
+        }
+        
+        function formatPrice(price) {
+            return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+        }
+        
+        function applyFilters() {
+            const selectedCategories = Array.from(document.querySelectorAll('.filter-chip input:checked')).map(cb => cb.value);
+            const selectedType = document.querySelector('.chip.active')?.dataset.type || 'all';
+            const minPrice = parseInt(document.getElementById('minPrice')?.value || 0);
+            const maxPrice = parseInt(document.getElementById('maxPrice')?.value || 1000000);
+            const selectedBrands = Array.from(document.querySelectorAll('input[name="brand"]:checked')).map(cb => cb.value);
+            const selectedRating = document.querySelector('input[name="rating"]:checked')?.value;
+            
+            if (typeof filterProducts === 'function') {
+                filterProducts({
+                    categories: selectedCategories,
+                    types: [selectedType],
+                    priceRange: [minPrice, maxPrice],
+                    brands: selectedBrands,
+                    rating: selectedRating
+                });
+            }
+            
+            document.querySelector('.products-sidebar')?.classList.remove('active');
+            document.querySelector('.filter-overlay')?.classList.remove('active');
+        }
+        
+        function resetFilters() {
+            document.querySelectorAll('.filter-chip input').forEach(inp => inp.checked = false);
+            document.querySelector('.filter-chip[data-category="all"] input').checked = true;
+            
+            document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+            document.querySelector('.chip[data-type="all"]').classList.add('active');
+            
+            const minSlider = document.getElementById('priceRangeMin');
+            const maxSlider = document.getElementById('priceRangeMax');
+            if (minSlider && maxSlider) {
+                minSlider.value = 0;
+                maxSlider.value = 500000;
+                updatePriceDisplay();
+            }
+            
+            document.querySelectorAll('input[name="brand"]').forEach(cb => cb.checked = false);
+            
+            document.querySelectorAll('input[name="rating"]').forEach(rb => rb.checked = false);
+            
+            document.getElementById('sortBy').value = 'default';
+            
+            updateSelectedFiltersDisplay();
+            
+            if (typeof loadAllProducts === 'function') {
+                loadAllProducts();
+            }
+        }
+        
+        function sortProducts() {
+            const sortBy = document.getElementById('sortBy').value;
+            if (typeof sortProductsList === 'function') {
+                sortProductsList(sortBy);
+            }
+        }
+        
+        function updateSelectedFiltersDisplay() {
+            const container = document.getElementById('selectedFilters');
+            if (!container) return;
+            
+            const selected = [];
+            
+            const selectedCategories = Array.from(document.querySelectorAll('.filter-chip input:checked'))
+                .map(cb => cb.value)
+                .filter(v => v !== 'all');
+            if (selectedCategories.length > 0) {
+                selected.push({
+                    label: `Loại: ${selectedCategories.map(c => getCategoryName(c)).join(', ')}`,
+                    type: 'category'
+                });
+            }
+            
+            const selectedType = document.querySelector('.chip.active')?.dataset.type;
+            if (selectedType && selectedType !== 'all') {
+                selected.push({
+                    label: `Danh mục: ${selectedType === 'food' ? 'Thức ăn' : 
+                            selectedType === 'toy' ? 'Đồ chơi' : 
+                            selectedType === 'accessory' ? 'Phụ kiện' : 'Sức khỏe'}`,
+                    type: 'type'
+                });
+            }
+            
+            const minPrice = parseInt(document.getElementById('priceRangeMin')?.value || 0);
+            const maxPrice = parseInt(document.getElementById('priceRangeMax')?.value || 1000000);
+            if (minPrice > 0 || maxPrice < 1000000) {
+                selected.push({
+                    label: `Giá: ${formatPrice(minPrice)}₫ - ${formatPrice(maxPrice)}₫`,
+                    type: 'price'
+                });
+            }
+            
+            const selectedBrands = Array.from(document.querySelectorAll('input[name="brand"]:checked'))
+                .map(cb => cb.value);
+            if (selectedBrands.length > 0) {
+                selected.push({
+                    label: `Thương hiệu: ${selectedBrands.map(b => 
+                        b === 'royal-canin' ? 'Royal Canin' :
+                        b === 'whiskas' ? 'Whiskas' :
+                        b === 'pedigree' ? 'Pedigree' : 'Petstar'
+                    ).join(', ')}`,
+                    type: 'brand'
+                });
+            }
+            
+            const selectedRating = document.querySelector('input[name="rating"]:checked')?.value;
+            if (selectedRating) {
+                selected.push({
+                    label: `Đánh giá: ${selectedRating}+`,
+                    type: 'rating'
+                });
+            }
+            
+            if (selected.length === 0) {
+                container.innerHTML = '<p class="no-filters" style="color: var(--gray-color); font-size: 0.9rem; text-align: center;">Chưa có bộ lọc nào được chọn</p>';
+            } else {
+                container.innerHTML = selected.map(filter => `
+                    <div class="selected-filter">
+                        ${filter.label}
+                        <button class="remove-filter" data-type="${filter.type}">&times;</button>
+                    </div>
+                `).join('');
+                
+                document.querySelectorAll('.remove-filter').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const type = this.dataset.type;
+                        removeFilter(type);
+                    });
+                });
+            }
+        }
+        
+        function removeFilter(type) {
+            switch(type) {
+                case 'category':
+                    document.querySelector('.filter-chip[data-category="all"]').click();
+                    break;
+                case 'type':
+                    document.querySelector('.chip[data-type="all"]').click();
+                    break;
+                case 'price':
+                    const minSlider = document.getElementById('priceRangeMin');
+                    const maxSlider = document.getElementById('priceRangeMax');
+                    if (minSlider && maxSlider) {
+                        minSlider.value = 0;
+                        maxSlider.value = 500000;
+                        updatePriceDisplay();
+                    }
+                    break;
+                case 'brand':
+                    document.querySelectorAll('input[name="brand"]').forEach(cb => cb.checked = false);
+                    break;
+                case 'rating':
+                    document.querySelectorAll('input[name="rating"]').forEach(rb => rb.checked = false);
+                    break;
+            }
+            updateSelectedFiltersDisplay();
+        }
+        
+        function getCategoryName(category) {
+            const categories = {
+                'dog': 'Chó',
+                'cat': 'Mèo',
+                'fish': 'Thủy sinh',
+                'bird': 'Chim',
+                'smallpet': 'Thú nhỏ'
+            };
+            return categories[category] || category;
+        }
+        
+        function updatePriceDisplay() {
+            const minSlider = document.getElementById('priceRangeMin');
+            const maxSlider = document.getElementById('priceRangeMax');
+            const currentMinPrice = document.getElementById('currentMinPrice');
+            const currentMaxPrice = document.getElementById('currentMaxPrice');
+            const minPriceInput = document.getElementById('minPrice');
+            const maxPriceInput = document.getElementById('maxPrice');
+            
+            if (minSlider && maxSlider && currentMinPrice && currentMaxPrice) {
+                currentMinPrice.textContent = formatPrice(parseInt(minSlider.value)) + '₫';
+                currentMaxPrice.textContent = formatPrice(parseInt(maxSlider.value)) + '₫';
+                
+                if (minPriceInput && maxPriceInput) {
+                    minPriceInput.value = minSlider.value;
+                    maxPriceInput.value = maxSlider.value;
+                }
+            }
+        }
+        
+        function viewProductDetails(productId) {
+            window.location.href = `product-detail.html?id=${productId}`;
+        }
+    </script>
+    
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+</body>
+</html>
