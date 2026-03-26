@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petoria - Thiên đường cho thú cưng của bạn</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/product-detail.css">
+    <link rel="stylesheet" href="assets/css/about.css">
+    
+    <link rel="stylesheet" href="assets/css/products.css">
+    <link rel="stylesheet" href="assets/css/cart.css">
+    <link rel="stylesheet" href="assets/css/contact.css">
+    <link rel="stylesheet" href="assets/css/services.css">
+    
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐾</text></svg>">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <h1><i class="fas fa-paw"></i> Petoria</h1>
+                </a>
+            </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="active"><i class="fas fa-home"></i> Trang chủ</a></li>
+                    <li><a href="products.html"><i class="fas fa-shopping-bag"></i> Sản phẩm</a></li>
+                    <li><a href="services.html"><i class="fas fa-concierge-bell"></i> Dịch vụ</a></li>
+                    <li><a href="about.html"><i class="fas fa-info-circle"></i> Về chúng tôi</a></li>
+                    <li><a href="contact.html"><i class="fas fa-address-book"></i> Liên hệ</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-right">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Tìm kiếm sản phẩm...">
+                    <button id="searchBtn"><i class="fas fa-search"></i></button>
+                </div>
+                
+                <div class="cart-icon">
+                    <a href="cart.html">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+                
+                <div class="user-actions">
+                    <div class="account-dropdown">
+                        <button class="account-btn" id="accountBtn">
+                            <i class="fas fa-user"></i>
+                            <span id="accountText">Tài khoản</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="dropdown-menu" id="accountDropdown">
+                            <div class="dropdown-header" id="dropdownHeader">
+                                <p>Chào mừng đến với Petoria!</p>
+                            </div>
+                            <div class="dropdown-content" id="dropdownContent">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div class="mobile-nav">
+            <ul>
+                <li><a href="index.html" class="active"><i class="fas fa-home"></i> Trang chủ</a></li>
+                <li><a href="products.html"><i class="fas fa-shopping-bag"></i> Sản phẩm</a></li>
+                <li><a href="services.html"><i class="fas fa-concierge-bell"></i> Dịch vụ</a></li>
+                <li><a href="about.html"><i class="fas fa-info-circle"></i> Về chúng tôi</a></li>
+                <li><a href="contact.html"><i class="fas fa-address-book"></i> Liên hệ</a></li>
+                <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Giỏ hàng</a></li>
+                <li><a href="#" id="mobileLoginBtn"><i class="fas fa-user"></i> Đăng nhập</a></li>
+                <li><a href="#" id="mobileRegisterBtn"><i class="fas fa-user-plus"></i> Đăng ký</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Chào mừng đến với Petoria</h2>
+                <p>Thiên đường dành cho thú cưng của bạn - Nơi cung cấp mọi thứ từ thức ăn, đồ chơi đến dịch vụ chăm sóc chuyên nghiệp.</p>
+                <div class="hero-buttons">
+                    <a href="products.html" class="btn btn-primary">Mua sắm ngay</a>
+                    <a href="services.html" class="btn btn-secondary">Khám phá dịch vụ</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-placeholder">
+                    <i class="fas fa-paw"></i>
+                    <p>Thú cưng hạnh phúc, gia đình hạnh phúc</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="categories-section">
+        <div class="container">
+            <h2 class="section-title">Danh mục nổi bật</h2>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-dog"></i>
+                    </div>
+                    <h3>Chó cảnh</h3>
+                    <p>Thức ăn, đồ chơi, phụ kiện cho chó</p>
+                    <a href="products.html?category=dog" class="btn btn-outline">Xem sản phẩm</a>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-cat"></i>
+                    </div>
+                    <h3>Mèo cảnh</h3>
+                    <p>Thức ăn, đồ chơi, phụ kiện cho mèo</p>
+                    <a href="products.html?category=cat" class="btn btn-outline">Xem sản phẩm</a>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-fish"></i>
+                    </div>
+                    <h3>Thủy sinh</h3>
+                    <p>Cá, bể cá, thức ăn và phụ kiện</p>
+                    <a href="products.html?category=fish" class="btn btn-outline">Xem sản phẩm</a>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-kiwi-bird"></i>
+                    </div>
+                    <h3>Chim cảnh</h3>
+                    <p>Thức ăn, lồng chim và phụ kiện</p>
+                    <a href="products.html?category=bird" class="btn btn-outline">Xem sản phẩm</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured-products">
+        <div class="container">
+            <h2 class="section-title">Sản phẩm nổi bật</h2>
+            <div class="products-filter">
+                <button class="filter-btn active" data-filter="all">Tất cả</button>
+                <button class="filter-btn" data-filter="best">Bán chạy</button>
+                <button class="filter-btn" data-filter="new">Mới về</button>
+                <button class="filter-btn" data-filter="sale">Khuyến mãi</button>
+            </div>
+            <div class="products-grid" id="featuredProducts">
+            </div>
+            <div class="text-center">
+                <a href="products.html" class="btn btn-primary">Xem tất cả sản phẩm</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-preview">
+        <div class="container">
+            <h2 class="section-title">Dịch vụ chăm sóc thú cưng</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h3>Chăm sóc & Cắt tỉa</h3>
+                    <p>Dịch vụ chăm sóc, tắm rửa và cắt tỉa lông chuyên nghiệp</p>
+                    <a href="services.html" class="btn btn-outline">Tìm hiểu thêm</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                    <h3>Khám chữa bệnh</h3>
+                    <p>Đội ngũ bác sĩ thú y giàu kinh nghiệm với trang thiết bị hiện đại</p>
+                    <a href="services.html" class="btn btn-outline">Tìm hiểu thêm</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Trông giữ</h3>
+                    <p>Dịch vụ trông giữ thú cưng khi bạn đi công tác hoặc du lịch</p>
+                    <a href="services.html" class="btn btn-outline">Tìm hiểu thêm</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-preview">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Về Petoria</h2>
+                    <p>Petoria được thành lập với sứ mệnh mang đến những sản phẩm và dịch vụ tốt nhất cho thú cưng của bạn. Chúng tôi tin rằng thú cưng xứng đáng được chăm sóc và yêu thương như những thành viên trong gia đình.</p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <h4>5000+</h4>
+                            <p>Khách hàng hài lòng</p>
+                        </div>
+                        <div class="stat">
+                            <h4>2000+</h4>
+                            <p>Sản phẩm đa dạng</p>
+                        </div>
+                        <div class="stat">
+                            <h4>50+</h4>
+                            <p>Chuyên gia thú y</p>
+                        </div>
+                    </div>
+                    <a href="about.html" class="btn btn-primary">Tìm hiểu thêm</a>
+                </div>
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-heart"></i>
+                        <p>Hình ảnh về Petoria</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <h3>Đăng ký nhận tin khuyến mãi</h3>
+                <p>Nhận thông tin khuyến mãi và sản phẩm mới từ Petoria</p>
+                <form id="newsletterForm" class="newsletter-form">
+                    <input type="email" placeholder="Email của bạn" required>
+                    <button type="submit" class="btn btn-primary">Đăng ký</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-col">
+                <div class="footer-logo">
+                    <i class="fas fa-paw"></i>
+                    <h2>Petoria</h2>
+                </div>
+                <p>Petoria - Thiên đường dành cho thú cưng của bạn. Chúng tôi cung cấp các sản phẩm và dịch vụ tốt nhất cho thú cưng từ năm 2010.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/bdi.edu.vn/?locale=vi_VN" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" title="Zalo"><i class="fab fa-weixin"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h3><i class="fas fa-link"></i> Liên kết nhanh</h3>
+                <div class="footer-links-grid">
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-home"></i> Trang chủ</a></li>
+                        <li><a href="products.html"><i class="fas fa-shopping-bag"></i> Sản phẩm</a></li>
+                        <li><a href="services.html"><i class="fas fa-concierge-bell"></i> Dịch vụ</a></li>
+                        <li><a href="about.html"><i class="fas fa-info-circle"></i> Về chúng tôi</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="contact.html"><i class="fas fa-address-book"></i> Liên hệ</a></li>
+                        <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Giỏ hàng</a></li>
+                        <li><a href="#"><i class="fas fa-question-circle"></i> FAQ</a></li>
+                        <li><a href="#"><i class="fas fa-blog"></i> Blog</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h3><i class="fas fa-shield-alt"></i> Chính sách</h3>
+                <ul>
+                    <li><a href="#"><i class="fas fa-lock"></i> Chính sách bảo mật</a></li>
+                    <li><a href="#"><i class="fas fa-file-contract"></i> Điều khoản sử dụng</a></li>
+                    <li><a href="#"><i class="fas fa-exchange-alt"></i> Chính sách đổi trả</a></li>
+                    <li><a href="#"><i class="fas fa-truck"></i> Chính sách vận chuyển</a></li>
+                    <li><a href="#"><i class="fas fa-credit-card"></i> Chính sách thanh toán</a></li>
+                    <li><a href="#"><i class="fas fa-gift"></i> Chính sách khuyến mãi</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3><i class="fas fa-envelope"></i> Liên hệ & Đăng ký</h3>
+                <div class="contact-info">
+                    <p><i class="fas fa-map-marker-alt"></i> Số 79, đường ĐT 743, phường Bình Hòa, TP. Thuận An, tỉnh Bình Dương</p>
+                    <p><i class="fas fa-phone"></i> (028) 1234 5678</p>
+                    <p><i class="fas fa-envelope"></i> info@petoria.vn</p>
+                    <p><i class="fas fa-clock"></i> 8:00 - 20:00 hàng ngày</p>
+                </div>
+                
+                <div class="newsletter-form">
+                    <h4>Đăng ký nhận tin</h4>
+                    <p>Nhận thông tin khuyến mãi và sản phẩm mới</p>
+                    <input type="email" placeholder="Email của bạn" required>
+                    <button type="submit">Đăng ký</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2010-2023 Petoria. Tất cả các quyền được bảo lưu.</p>
+            <div class="payment-methods">
+                <i class="fab fa-cc-visa" title="Visa"></i>
+                <i class="fab fa-cc-mastercard" title="Mastercard"></i>
+                <i class="fab fa-cc-paypal" title="PayPal"></i>
+                <i class="fab fa-cc-amex" title="American Express"></i>
+                <i class="fab fa-cc-jcb" title="JCB"></i>
+                <i class="fas fa-money-bill-wave" title="Tiền mặt"></i>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>MST: 0123456789 | GPKD: 41A8021234 do Sở KHĐT TP.HCM cấp ngày 01/01/2010</p>
+            <p>Thiết kế và phát triển bởi Petoria Team</p>
+        </div>
+    </div>
+</footer>
+
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="authTitle">Đăng nhập</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="auth-tabs">
+                    <button class="tab-btn active" data-tab="login">Đăng nhập</button>
+                    <button class="tab-btn" data-tab="register">Đăng ký</button>
+                </div>
+                
+                <form id="loginForm" class="auth-form active">
+                    <div class="form-group">
+                        <label for="loginEmail">Email</label>
+                        <input type="email" id="loginEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Mật khẩu</label>
+                        <div class="password-input">
+                            <input type="password" id="loginPassword" required>
+                            <button type="button" class="toggle-password"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="form-options">
+                        <label class="checkbox">
+                            <input type="checkbox" id="rememberLogin">
+                            <span>Ghi nhớ đăng nhập</span>
+                        </label>
+                        <a href="#" class="forgot-password">Quên mật khẩu?</a>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Đăng nhập</button>
+                    
+                    <div class="social-login">
+                        <p>Hoặc đăng nhập với</p>
+                        <div class="social-buttons">
+                            <button type="button" class="btn btn-google">
+                                <i class="fab fa-google"></i> Google
+                            </button>
+                            <button type="button" class="btn btn-facebook">
+                                <i class="fab fa-facebook-f"></i> Facebook
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                
+                <form id="registerForm" class="auth-form">
+                    <div class="form-group">
+                        <label for="registerName">Họ và tên</label>
+                        <input type="text" id="registerName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerEmail">Email</label>
+                        <input type="email" id="registerEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerPhone">Số điện thoại</label>
+                        <input type="tel" id="registerPhone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerPassword">Mật khẩu</label>
+                        <div class="password-input">
+                            <input type="password" id="registerPassword" required>
+                            <button type="button" class="toggle-password"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerConfirmPassword">Xác nhận mật khẩu</label>
+                        <div class="password-input">
+                            <input type="password" id="registerConfirmPassword" required>
+                            <button type="button" class="toggle-password"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" id="agreeTerms" required>
+                        <label for="agreeTerms">Tôi đồng ý với <a href="#">Điều khoản sử dụng</a> và <a href="#">Chính sách bảo mật</a></label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Đăng ký</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="assets/js/ma.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/products.js"></script>
+    <script src="assets/js/cart.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof loadFeaturedProducts === 'function') {
+                loadFeaturedProducts();
+            }
+            
+            if (typeof updateCartCount === 'function') {
+                updateCartCount();
+            }
+            
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const mobileNav = document.querySelector('.mobile-nav');
+            
+            if (mobileMenuBtn && mobileNav) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mobileNav.classList.toggle('show');
+                });
+            }
+            
+            document.addEventListener('click', function(event) {
+                if (!event.target.closest('.mobile-menu-btn') && !event.target.closest('.mobile-nav')) {
+                    mobileNav.classList.remove('show');
+                }
+            });
+            
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const filter = this.getAttribute('data-filter');
+                    if (typeof filterFeaturedProducts === 'function') {
+                        filterFeaturedProducts(filter);
+                    }
+                });
+            });
+            
+            const newsletterForm = document.getElementById('newsletterForm');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const email = this.querySelector('input[type="email"]').value;
+                    if (email && typeof showToast === 'function') {
+                        showToast('Cảm ơn bạn đã đăng ký nhận tin!', 'success');
+                        this.reset();
+                    }
+                });
+            }
+            
+            const searchBtn = document.getElementById('searchBtn');
+            const searchInput = document.getElementById('searchInput');
+            
+            if (searchBtn && searchInput) {
+                searchBtn.addEventListener('click', performSearch);
+                searchInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') performSearch();
+                });
+                
+                function performSearch() {
+                    const query = searchInput.value.trim();
+                    if (query) {
+                        window.location.href = `products.html?search=${encodeURIComponent(query)}`;
+                    }
+                }
+            }
+        });
+    </script>
+<a href="#" class="back-to-top" id="backToTop">
+    <i class="fas fa-chevron-up"></i>
+</a>
+</body>
+</html>

@@ -1,0 +1,370 @@
+/* Responsive design for all pages - Giao diện thích ứng cho tất cả các trang */
+
+/* Large devices (desktops, less than 1200px) - Màn hình lớn dưới 1200px */
+@media (max-width: 1199.98px) {
+    .container {
+        max-width: 960px;
+    }
+    
+    .hero-content h2 {
+        font-size: 42px;
+    }
+    
+    /* Grid danh mục hiển thị 2 cột */
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Footer hiển thị 2 cột */
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+}
+
+/* Medium devices (tablets, less than 992px) - Máy tính bảng dưới 992px */
+@media (max-width: 991.98px) {
+    .container {
+        max-width: 720px;
+    }
+    
+    /* Header - Ẩn menu chính, hiển thị nút menu mobile */
+    .main-nav {
+        display: none;
+    }
+    
+    .mobile-menu-btn {
+        display: block;
+    }
+    
+    .header-right {
+        gap: 15px;
+    }
+    
+    .search-box input {
+        width: 150px;
+    }
+    
+    /* Hero section - Chuyển thành cột dọc, căn giữa */
+    .hero-section .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .hero-content h2 {
+        font-size: 36px;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+    }
+    
+    /* Products grid - Hiển thị 2 cột sản phẩm */
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* About page - Câu chuyện chuyển thành 1 cột */
+    .story-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .mission-grid,
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Cart page - Giỏ hàng chuyển thành 1 cột */
+    .cart-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .cart-summary {
+        position: static;
+    }
+    
+    /* Services page */
+    .service-detail {
+        grid-template-columns: 1fr;
+    }
+    
+    .booking-form-container {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Contact page - Liên hệ và bản đồ chuyển thành 1 cột */
+    .contact-grid,
+    .map-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Small devices (landscape phones, less than 768px) - Điện thoại ngang dưới 768px */
+@media (max-width: 767.98px) {
+    .container {
+        max-width: 540px;
+    }
+    
+    /* General - Kích thước tiêu đề chung */
+    .section-title {
+        font-size: 28px;
+    }
+    
+    /* Header */
+    .logo h1 {
+        font-size: 20px;
+    }
+    
+    .search-box input {
+        width: 120px;
+    }
+    
+    /* Hero section */
+    .hero-section {
+        padding: 60px 0;
+    }
+    
+    .hero-content h2 {
+        font-size: 28px;
+    }
+    
+    .hero-content p {
+        font-size: 16px;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .image-placeholder {
+        height: 250px;
+    }
+    
+    /* Products - Sản phẩm hiển thị 1 cột */
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .products-filter {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    /* About page - Các grid chuyển thành 1 cột */
+    .page-hero h1 {
+        font-size: 36px;
+    }
+    
+    .mission-grid,
+    .team-grid,
+    .cert-grid,
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .timeline-content {
+        padding: 20px;
+        margin-left: 20px;
+    }
+    
+    /* Cart page - Giỏ hàng chuyển thành layout dạng cột */
+    .cart-item {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "image"
+            "info"
+            "price"
+            "quantity"
+            "total"
+            "remove";
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .cart-item-image {
+        margin: 0 auto;
+    }
+    
+    .remove-item-btn {
+        justify-self: center;
+    }
+    
+    /* Services page */
+    .service-image .image-placeholder {
+        height: 300px;
+    }
+    
+    .service-content h2 {
+        font-size: 28px;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Contact page */
+    .contact-form-container,
+    .contact-info-container {
+        padding: 25px;
+    }
+    
+    .contact-info-item {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .emergency-number {
+        font-size: 24px;
+    }
+    
+    /* Footer - Chuyển thành 1 cột */
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+}
+
+/* Extra small devices (portrait phones, less than 576px) - Điện thoại dọc dưới 576px */
+@media (max-width: 575.98px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    /* General - Kích thước font chữ nhỏ hơn */
+    h1 {
+        font-size: 28px;
+    }
+    
+    h2 {
+        font-size: 24px;
+    }
+    
+    .btn {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+    
+    /* Header - Ẩn ô tìm kiếm trên mobile rất nhỏ */
+    .header .container {
+        padding: 10px 15px;
+    }
+    
+    .search-box {
+        display: none;
+    }
+    
+    /* Hiển thị menu mobile */
+    .mobile-nav.show {
+        display: block;
+    }
+    
+    /* Hero section */
+    .hero-section {
+        padding: 40px 0;
+    }
+    
+    .hero-content h2 {
+        font-size: 24px;
+    }
+    
+    /* Products - Sản phẩm giới hạn chiều rộng tối đa */
+    .product-card {
+        margin: 0 auto;
+        max-width: 300px;
+    }
+    
+    /* About page */
+    .page-hero {
+        padding: 60px 0;
+    }
+    
+    .page-hero h1 {
+        font-size: 28px;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stat-number {
+        font-size: 48px;
+    }
+    
+    /* Cart page - Header và nút xếp theo cột */
+    .cart-header {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    
+    .cart-actions {
+        flex-direction: column;
+    }
+    
+    /* Modal - Điều chỉnh kích thước modal cho mobile */
+    .modal-content {
+        margin: 10px;
+        width: calc(100% - 20px);
+    }
+    
+    /* Back to top button - Nút về đầu trang nhỏ hơn */
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
+    }
+}
+
+/* Print styles - Kiểu dáng khi in trang */
+@media print {
+    /* Ẩn các phần tử không cần thiết khi in */
+    .header,
+    .footer,
+    .back-to-top,
+    .mobile-menu-btn,
+    .cart-actions {
+        display: none !important;
+    }
+    
+    .container {
+        max-width: 100%;
+        padding: 0;
+    }
+    
+    /* Font chữ khi in */
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+    }
+    
+    /* Link không có gạch chân và màu đen */
+    a {
+        text-decoration: none;
+        color: #000;
+    }
+    
+    /* Ẩn nút khi in */
+    .btn {
+        display: none;
+    }
+    
+    /* Tránh ngắt trang giữa thẻ sản phẩm */
+    .product-card {
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+}

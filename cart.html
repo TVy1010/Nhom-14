@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ hàng - Petoria</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/product-detail.css">
+    <link rel="stylesheet" href="assets/css/about.css">
+    
+    <link rel="stylesheet" href="assets/css/products.css">
+    <link rel="stylesheet" href="assets/css/cart.css">
+    <link rel="stylesheet" href="assets/css/contact.css">
+    <link rel="stylesheet" href="assets/css/services.css">
+
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐾</text></svg>">
+    <style>
+        .cart-page {
+            padding: 2rem 0 4rem;
+        }
+        
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .page-header h1 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+        }
+        
+        .breadcrumb a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .breadcrumb span {
+            color: var(--gray-color);
+        }
+        
+        .cart-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+        
+        .cart-items {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .cart-header h2 {
+            margin: 0;
+            color: var(--primary-color);
+        }
+        
+        .clear-cart-btn {
+            background: none;
+            border: none;
+            color: var(--danger-color);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .cart-item {
+            display: grid;
+            grid-template-columns: 100px 2fr 1fr auto;
+            gap: 1rem;
+            align-items: center;
+            padding: 1rem;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+        
+        .cart-item-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #f5f5f5;
+        }
+        
+        .cart-item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .cart-item-info h4 {
+            margin: 0 0 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .cart-item-category {
+            color: var(--gray-color);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .cart-item-price {
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        
+        .cart-item-quantity {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .quantity-btn {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 1px solid var(--primary-color);
+            background: white;
+            color: var(--primary-color);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        
+        .quantity-btn:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .quantity-input {
+            width: 50px;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 0.25rem;
+        }
+        
+        .cart-item-total {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: var(--dark-color);
+        }
+        
+        .remove-item-btn {
+            background: none;
+            border: none;
+            color: var(--danger-color);
+            cursor: pointer;
+            font-size: 1.2rem;
+            padding: 0.5rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        .remove-item-btn:hover {
+            background-color: rgba(220, 53, 69, 0.1);
+        }
+        
+        .cart-empty {
+            text-align: center;
+            padding: 3rem;
+        }
+        
+        .cart-empty i {
+            font-size: 4rem;
+            color: var(--light-gray);
+            margin-bottom: 1rem;
+        }
+        
+        .cart-empty h3 {
+            margin-bottom: 1rem;
+            color: var(--gray-color);
+        }
+        
+        .cart-summary {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            box-shadow: var(--box-shadow);
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+        }
+        
+        .cart-summary h2 {
+            margin: 0 0 1.5rem;
+            color: var(--primary-color);
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px dashed var(--light-gray);
+        }
+        
+        .summary-row.total {
+            border-bottom: 2px solid var(--primary-color);
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .summary-row.discount {
+            color: var(--success-color);
+        }
+        
+        .coupon-section {
+            margin: 1.5rem 0;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: var(--border-radius);
+        }
+        
+        .coupon-input {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        
+        .coupon-input input {
+            flex: 1;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .checkout-btn {
+            width: 100%;
+            margin-top: 1.5rem;
+            padding: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .payment-methods-cart {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--light-gray);
+        }
+        
+        .payment-methods-cart h4 {
+            margin-bottom: 1rem;
+            color: var(--gray-color);
+        }
+        
+        .payment-icons {
+            display: flex;
+            gap: 1rem;
+            font-size: 1.5rem;
+            color: var(--gray-color);
+        }
+        
+        .continue-shopping {
+            display: inline-block;
+            margin-top: 1rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .suggested-products {
+            margin-top: 3rem;
+            padding-top: 3rem;
+            border-top: 1px solid var(--light-gray);
+        }
+        
+        .suggested-products h2 {
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+        
+        .suggested-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        
+        .suggested-item {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 1rem;
+            text-align: center;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+        
+        .suggested-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .suggested-item img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .suggested-item h4 {
+            font-size: 0.9rem;
+            margin: 0.5rem 0;
+        }
+        
+        .suggested-price {
+            color: var(--primary-color);
+            font-weight: bold;
+            margin: 0.5rem 0;
+        }
+        
+        .add-suggested-btn {
+            width: 100%;
+            padding: 0.5rem;
+            font-size: 0.8rem;
+        }
+        
+        @media (max-width: 992px) {
+            .cart-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .cart-summary {
+                position: static;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .cart-item {
+                grid-template-columns: 80px 1fr;
+                grid-template-areas: 
+                    "image info"
+                    "quantity total"
+                    "actions actions";
+                gap: 1rem;
+            }
+            
+            .cart-item-image {
+                grid-area: image;
+                width: 80px;
+                height: 80px;
+            }
+            
+            .cart-item-info {
+                grid-area: info;
+            }
+            
+            .cart-item-quantity {
+                grid-area: quantity;
+                justify-content: flex-start;
+            }
+            
+            .cart-item-total {
+                grid-area: total;
+                text-align: right;
+            }
+            
+            .cart-item-actions {
+                grid-area: actions;
+                text-align: right;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <h1><i class="fas fa-paw"></i> Petoria</h1>
+                </a>
+            </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Trang chủ</a></li>
+                    <li><a href="products.html"><i class="fas fa-shopping-bag"></i> Sản phẩm</a></li>
+                    <li><a href="services.html"><i class="fas fa-concierge-bell"></i> Dịch vụ</a></li>
+                    <li><a href="about.html"><i class="fas fa-info-circle"></i> Về chúng tôi</a></li>
+                    <li><a href="contact.html"><i class="fas fa-address-book"></i> Liên hệ</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-right">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Tìm kiếm sản phẩm...">
+                    <button id="searchBtn"><i class="fas fa-search"></i></button>
+                </div>
+                
+                <div class="cart-icon">
+                    <a href="cart.html">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+                
+                <div class="user-actions">
+                    <div class="account-dropdown">
+                        <button class="account-btn" id="accountBtn">
+                            <i class="fas fa-user"></i>
+                            <span id="accountText">Tài khoản</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="dropdown-menu" id="accountDropdown">
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div class="mobile-nav">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Trang chủ</a></li>
+                <li><a href="products.html"><i class="fas fa-shopping-bag"></i> Sản phẩm</a></li>
+                <li><a href="services.html"><i class="fas fa-concierge-bell"></i> Dịch vụ</a></li>
+                <li><a href="about.html"><i class="fas fa-info-circle"></i> Về chúng tôi</a></li>
+                <li><a href="contact.html"><i class="fas fa-address-book"></i> Liên hệ</a></li>
+                <li><a href="cart.html" class="active"><i class="fas fa-shopping-cart"></i> Giỏ hàng</a></li>
+                <li><a href="#" id="mobileLoginBtn"><i class="fas fa-user"></i> Đăng nhập</a></li>
+                <li><a href="#" id="mobileRegisterBtn"><i class="fas fa-user-plus"></i> Đăng ký</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="cart-page">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="index.html">Trang chủ</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Giỏ hàng</span>
+            </nav>
+            
+            <div class="page-header">
+                <h1>Giỏ hàng của bạn</h1>
+                <p>Kiểm tra và chỉnh sửa giỏ hàng trước khi thanh toán</p>
+            </div>
+            
+            <div class="cart-container">
+                <div class="cart-items">
+                    <div class="cart-header">
+                        <h2>Sản phẩm trong giỏ</h2>
+                        <button class="clear-cart-btn" id="clearCartBtn">
+                            <i class="fas fa-trash"></i> Xóa giỏ hàng
+                        </button>
+                    </div>
+                    
+                    <div id="cartItemsList">
+                        <div class="cart-empty">
+                            <i class="fas fa-shopping-cart"></i>
+                            <h3>Giỏ hàng của bạn đang trống</h3>
+                            <p>Hãy thêm sản phẩm vào giỏ hàng để bắt đầu mua sắm</p>
+                            <a href="products.html" class="btn btn-primary">Tiếp tục mua sắm</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cart-summary">
+                    <h2>Tóm tắt đơn hàng</h2>
+                    
+                    <div class="summary-row">
+                        <span>Tạm tính:</span>
+                        <span id="subtotal">0₫</span>
+                    </div>
+                    
+                    <div class="summary-row">
+                        <span>Phí vận chuyển:</span>
+                        <span id="shippingFee">0₫</span>
+                    </div>
+                    
+                    <div class="summary-row discount">
+                        <span>Giảm giá:</span>
+                        <span id="discountAmount">-0₫</span>
+                    </div>
+                    
+                    <div class="summary-row total">
+                        <span>Tổng cộng:</span>
+                        <span id="totalAmount">0₫</span>
+                    </div>
+                    
+                    <div class="coupon-section">
+                        <h4><i class="fas fa-tag"></i> Mã giảm giá</h4>
+                        <div class="coupon-input">
+                            <input type="text" id="couponCode" placeholder="Nhập mã giảm giá">
+                            <button class="btn btn-outline" id="applyCouponBtn">Áp dụng</button>
+                        </div>
+                        <div id="couponMessage"></div>
+                    </div>
+                    
+                    <button class="btn btn-primary checkout-btn" id="checkoutBtn">
+                        <i class="fas fa-lock"></i> Tiến hành thanh toán
+                    </button>
+                    
+                    <div class="payment-methods-cart">
+                        <h4>Phương thức thanh toán</h4>
+                        <div class="payment-icons">
+                            <i class="fab fa-cc-visa" title="Visa"></i>
+                            <i class="fab fa-cc-mastercard" title="Mastercard"></i>
+                            <i class="fab fa-cc-paypal" title="PayPal"></i>
+                            <i class="fab fa-cc-amex" title="American Express"></i>
+                            <i class="fas fa-money-bill-wave" title="Tiền mặt"></i>
+                        </div>
+                    </div>
+                    
+                    <a href="products.html" class="continue-shopping">
+                        <i class="fas fa-arrow-left"></i> Tiếp tục mua sắm
+                    </a>
+                </div>
+            </div>
+            
+            <div class="suggested-products" id="suggestedProducts">
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3><i class="fas fa-paw"></i> Petoria</h3>
+                    <p>Petoria - Thiên đường dành cho thú cưng của bạn. Chúng tôi cung cấp các sản phẩm và dịch vụ tốt nhất cho thú cưng.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/bdi.edu.vn/?locale=vi_VN"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Liên kết nhanh</h3>
+                    <ul>
+                        <li><a href="index.html">Trang chủ</a></li>
+                        <li><a href="products.html">Sản phẩm</a></li>
+                        <li><a href="services.html">Dịch vụ</a></li>
+                        <li><a href="about.html">Về chúng tôi</a></li>
+                        <li><a href="contact.html">Liên hệ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Chính sách</h3>
+                    <ul>
+                        <li><a href="#">Chính sách bảo mật</a></li>
+                        <li><a href="#">Điều khoản sử dụng</a></li>
+                        <li><a href="#">Chính sách đổi trả</a></li>
+                        <li><a href="#">Chính sách vận chuyển</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Liên hệ</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Số 79, đường ĐT 743, phường Bình Hòa, TP. Thuận An, tỉnh Bình Dương</p>
+                        <p><i class="fas fa-phone"></i> (028) 1234 5678</p>
+                        <p><i class="fas fa-envelope"></i> info@petoria.vn</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Petoria. Tất cả các quyền được bảo lưu.</p>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                    <i class="fab fa-cc-amex"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="authTitle">Đăng nhập</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="assets/js/ma.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/cart.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let cartItems = JSON.parse(localStorage.getItem('petoriaCart')) || [];
+            let appliedCoupon = localStorage.getItem('petoriaAppliedCoupon') || null;
+            
+            loadCartItems();
+            loadSuggestedProducts();
+            
+            const clearCartBtn = document.getElementById('clearCartBtn');
+            if (clearCartBtn) {
+                clearCartBtn.addEventListener('click', clearCart);
+            }
+            
+            const applyCouponBtn = document.getElementById('applyCouponBtn');
+            const couponCodeInput = document.getElementById('couponCode');
+            const couponMessage = document.getElementById('couponMessage');
+            
+            if (applyCouponBtn && couponCodeInput) {
+                applyCouponBtn.addEventListener('click', applyCoupon);
+                
+                couponCodeInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        applyCoupon();
+                    }
+                });
+                
+                if (appliedCoupon) {
+                    couponCodeInput.value = appliedCoupon;
+                    applyCoupon();
+                }
+            }
+            
+            const checkoutBtn = document.getElementById('checkoutBtn');
+            if (checkoutBtn) {
+                checkoutBtn.addEventListener('click', checkout);
+            }
+            
+            function loadCartItems() {
+                const cartItemsList = document.getElementById('cartItemsList');
+                cartItems = JSON.parse(localStorage.getItem('petoriaCart')) || [];
+                
+                if (cartItems.length === 0) {
+                    cartItemsList.innerHTML = `
+                        <div class="cart-empty">
+                            <i class="fas fa-shopping-cart"></i>
+                            <h3>Giỏ hàng của bạn đang trống</h3>
+                            <p>Hãy thêm sản phẩm vào giỏ hàng để bắt đầu mua sắm</p>
+                            <a href="products.html" class="btn btn-primary">Tiếp tục mua sắm</a>
+                        </div>
+                    `;
+                    updateCartSummary();
+                    return;
+                }
+                
+                let html = '';
+                cartItems.forEach(item => {
+                    const itemTotal = item.price * item.quantity;
+                    html += `
+                        <div class="cart-item" data-id="${item.id}">
+                            <div class="cart-item-image">
+                                <img src="${item.image || 'https://images.unsplash.com/photo-1596492784531-6e6eb5ea9993?w=200&h=200&fit=crop'}" alt="${item.name}">
+                            </div>
+                            <div class="cart-item-info">
+                                <h4>${item.name}</h4>
+                                <div class="cart-item-category">Thú cưng</div>
+                                <div class="cart-item-price">${formatPrice(item.price)}₫</div>
+                            </div>
+                            <div class="cart-item-quantity">
+                                <button class="quantity-btn minus" data-id="${item.id}">-</button>
+                                <input type="number" class="quantity-input" value="${item.quantity}" min="1" max="99" data-id="${item.id}">
+                                <button class="quantity-btn plus" data-id="${item.id}">+</button>
+                            </div>
+                            <div class="cart-item-total">${formatPrice(itemTotal)}₫</div>
+                            <div class="cart-item-actions">
+                                <button class="remove-item-btn" data-id="${item.id}" title="Xóa sản phẩm">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                cartItemsList.innerHTML = html;
+                
+                document.querySelectorAll('.quantity-btn.minus').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const productId = this.getAttribute('data-id');
+                        updateQuantity(productId, -1);
+                    });
+                });
+                
+                document.querySelectorAll('.quantity-btn.plus').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const productId = this.getAttribute('data-id');
+                        updateQuantity(productId, 1);
+                    });
+                });
+                
+                document.querySelectorAll('.quantity-input').forEach(input => {
+                    input.addEventListener('change', function() {
+                        const productId = this.getAttribute('data-id');
+                        const quantity = parseInt(this.value);
+                        if (quantity >= 1 && quantity <= 99) {
+                            setQuantity(productId, quantity);
+                        }
+                    });
+                });
+                
+                document.querySelectorAll('.remove-item-btn').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const productId = this.getAttribute('data-id');
+                        removeFromCart(productId);
+                    });
+                });
+                
+                updateCartSummary();
+            }
+            
+            function updateQuantity(productId, change) {
+                const item = cartItems.find(item => item.id == productId);
+                if (item) {
+                    item.quantity += change;
+                    if (item.quantity < 1) item.quantity = 1;
+                    if (item.quantity > 99) item.quantity = 99;
+                    
+                    localStorage.setItem('petoriaCart', JSON.stringify(cartItems));
+                    loadCartItems();
+                    updateCartCount();
+                }
+            }
+            
+            function setQuantity(productId, quantity) {
+                const item = cartItems.find(item => item.id == productId);
+                if (item) {
+                    item.quantity = quantity;
+                    localStorage.setItem('petoriaCart', JSON.stringify(cartItems));
+                    loadCartItems();
+                    updateCartCount();
+                }
+            }
+            
+            function removeFromCart(productId) {
+                if (confirm('Bạn có chắc chắn muốn xóa sản phẩm này khỏi giỏ hàng?')) {
+                    cartItems = cartItems.filter(item => item.id != productId);
+                    localStorage.setItem('petoriaCart', JSON.stringify(cartItems));
+                    loadCartItems();
+                    updateCartCount();
+                    showToast('Đã xóa sản phẩm khỏi giỏ hàng', 'info');
+                }
+            }
+            
+            function clearCart() {
+                if (cartItems.length === 0) return;
+                
+                if (confirm('Bạn có chắc chắn muốn xóa toàn bộ giỏ hàng?')) {
+                    cartItems = [];
+                    localStorage.removeItem('petoriaCart');
+                    localStorage.removeItem('petoriaAppliedCoupon');
+                    loadCartItems();
+                    updateCartCount();
+                    couponCodeInput.value = '';
+                    couponMessage.innerHTML = '';
+                    showToast('Đã xóa toàn bộ giỏ hàng', 'info');
+                }
+            }
+            
+            function updateCartSummary() {
+                const subtotal = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+                const shippingFee = subtotal > 0 ? (subtotal >= 500000 ? 0 : 30000) : 0;
+                
+                let discount = 0;
+                if (appliedCoupon) {
+                    if (appliedCoupon === 'PETORIA10' && subtotal >= 200000) {
+                        discount = subtotal * 0.1; // 10% discount
+                    } else if (appliedCoupon === 'PETORIA20' && subtotal >= 500000) {
+                        discount = subtotal * 0.2; // 20% discount
+                    } else if (appliedCoupon === 'FREESHIP' && subtotal >= 300000) {
+                        discount = shippingFee; // Free shipping
+                    }
+                }
+                
+                const total = subtotal + shippingFee - discount;
+                
+                document.getElementById('subtotal').textContent = formatPrice(subtotal) + '₫';
+                document.getElementById('shippingFee').textContent = formatPrice(shippingFee) + '₫';
+                document.getElementById('discountAmount').textContent = '-' + formatPrice(discount) + '₫';
+                document.getElementById('totalAmount').textContent = formatPrice(total) + '₫';
+            }
+            
+            function applyCoupon() {
+                const code = couponCodeInput.value.trim().toUpperCase();
+                const validCoupons = {
+                    'PETORIA10': { min: 200000, discount: 0.1, message: 'Giảm 10% cho đơn hàng từ 200.000₫' },
+                    'PETORIA20': { min: 500000, discount: 0.2, message: 'Giảm 20% cho đơn hàng từ 500.000₫' },
+                    'FREESHIP': { min: 300000, discount: 'freeship', message: 'Miễn phí vận chuyển cho đơn hàng từ 300.000₫' }
+                };
+                
+                const subtotal = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+                
+                if (!code) {
+                    couponMessage.innerHTML = '<p style="color: var(--warning-color);">Vui lòng nhập mã giảm giá</p>';
+                    return;
+                }
+                
+                if (cartItems.length === 0) {
+                    couponMessage.innerHTML = '<p style="color: var(--warning-color);">Giỏ hàng trống, không thể áp dụng mã giảm giá</p>';
+                    return;
+                }
+                
+                if (validCoupons[code]) {
+                    const coupon = validCoupons[code];
+                    
+                    if (subtotal < coupon.min) {
+                        couponMessage.innerHTML = `<p style="color: var(--warning-color);">Mã giảm giá yêu cầu đơn hàng tối thiểu ${formatPrice(coupon.min)}₫</p>`;
+                        appliedCoupon = null;
+                        localStorage.removeItem('petoriaAppliedCoupon');
+                    } else {
+                        appliedCoupon = code;
+                        localStorage.setItem('petoriaAppliedCoupon', code);
+                        couponMessage.innerHTML = `<p style="color: var(--success-color);"><i class="fas fa-check-circle"></i> Đã áp dụng mã giảm giá: ${coupon.message}</p>`;
+                        showToast('Đã áp dụng mã giảm giá thành công!', 'success');
+                    }
+                } else {
+                    couponMessage.innerHTML = '<p style="color: var(--danger-color);">Mã giảm giá không hợp lệ</p>';
+                    appliedCoupon = null;
+                    localStorage.removeItem('petoriaAppliedCoupon');
+                }
+                
+                updateCartSummary();
+            }
+            
+            function checkout() {
+                if (cartItems.length === 0) {
+                    showToast('Giỏ hàng của bạn đang trống', 'warning');
+                    return;
+                }
+                
+                const currentUser = JSON.parse(localStorage.getItem('petoriaCurrentUser'));
+                if (!currentUser) {
+                    showToast('Vui lòng đăng nhập để thanh toán', 'warning');
+                    openAuthModal('login');
+                    return;
+                }
+                
+                const subtotal = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+                const shippingFee = subtotal > 0 ? (subtotal >= 500000 ? 0 : 30000) : 0;
+                let discount = 0;
+                
+                if (appliedCoupon) {
+                    if (appliedCoupon === 'PETORIA10' && subtotal >= 200000) {
+                        discount = subtotal * 0.1;
+                    } else if (appliedCoupon === 'PETORIA20' && subtotal >= 500000) {
+                        discount = subtotal * 0.2;
+                    } else if (appliedCoupon === 'FREESHIP' && subtotal >= 300000) {
+                        discount = shippingFee;
+                    }
+                }
+                
+                const total = subtotal + shippingFee - discount;
+                
+                const order = {
+                    id: 'ORD' + Date.now(),
+                    userId: currentUser.id,
+                    userEmail: currentUser.email,
+                    items: cartItems,
+                    subtotal: subtotal,
+                    shipping: shippingFee,
+                    discount: discount,
+                    total: total,
+                    coupon: appliedCoupon,
+                    status: 'pending',
+                    createdAt: new Date().toISOString(),
+                    shippingAddress: {
+                        name: currentUser.name,
+                        phone: currentUser.phone || '',
+                        address: 'Chưa có địa chỉ'
+                    },
+                    paymentMethod: 'cod' 
+                };
+                
+                const orders = JSON.parse(localStorage.getItem('petoriaOrders')) || [];
+                orders.push(order);
+                localStorage.setItem('petoriaOrders', JSON.stringify(orders));
+                
+                cartItems = [];
+                localStorage.removeItem('petoriaCart');
+                localStorage.removeItem('petoriaAppliedCoupon');
+                
+                loadCartItems();
+                updateCartCount();
+                
+                const orderDetails = `
+                    <div style="text-align: left;">
+                        <h3>Đặt hàng thành công!</h3>
+                        <p><strong>Mã đơn hàng:</strong> ${order.id}</p>
+                        <p><strong>Tổng tiền:</strong> ${formatPrice(total)}₫</p>
+                        <p><strong>Phương thức thanh toán:</strong> Thanh toán khi nhận hàng</p>
+                        <p><strong>Trạng thái:</strong> Đang xử lý</p>
+                        <p>Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất để xác nhận đơn hàng.</p>
+                    </div>
+                `;
+                
+                const modal = document.createElement('div');
+                modal.className = 'modal';
+                modal.style.display = 'block';
+                modal.innerHTML = `
+                    <div class="modal-content" style="max-width: 500px;">
+                        <div class="modal-header">
+                            <h3>Đặt hàng thành công!</h3>
+                            <button class="close-modal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <div style="text-align: center; padding: 2rem 0;">
+                                <i class="fas fa-check-circle" style="font-size: 4rem; color: var(--success-color); margin-bottom: 1rem;"></i>
+                                <h3>Cảm ơn bạn đã đặt hàng!</h3>
+                                <p><strong>Mã đơn hàng:</strong> ${order.id}</p>
+                                <p><strong>Tổng tiền:</strong> ${formatPrice(total)}₫</p>
+                                <p>Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất.</p>
+                            </div>
+                            <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                                <button class="btn btn-outline" id="continueShoppingBtn" style="flex: 1;">Tiếp tục mua sắm</button>
+                                <button class="btn btn-primary" id="viewOrdersBtn" style="flex: 1;">Xem đơn hàng</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                document.body.appendChild(modal);
+                
+                const closeBtn = modal.querySelector('.close-modal');
+                closeBtn.addEventListener('click', () => {
+                    modal.style.display = 'none';
+                    setTimeout(() => modal.remove(), 300);
+                });
+                
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        modal.style.display = 'none';
+                        setTimeout(() => modal.remove(), 300);
+                    }
+                });
+                
+                const continueShoppingBtn = modal.querySelector('#continueShoppingBtn');
+                continueShoppingBtn.addEventListener('click', () => {
+                    window.location.href = 'products.html';
+                });
+                
+                const viewOrdersBtn = modal.querySelector('#viewOrdersBtn');
+                viewOrdersBtn.addEventListener('click', () => {
+                    showToast('Tính năng xem đơn hàng sẽ sớm được cập nhật!', 'info');
+                });
+            }
+            
+            function loadSuggestedProducts() {
+                const suggestedProducts = [
+                    {
+                        id: 101,
+                        name: "Thức ăn cho chó trưởng thành",
+                        price: 200000,
+                        image: "https://images.unsplash.com/photo-1596492784531-6e6eb5ea9993?w=200&h=200&fit=crop"
+                    },
+                    {
+                        id: 102,
+                        name: "Đồ chơi cho mèo",
+                        price: 50000,
+                        image: "https://images.unsplash.com/photo-1513360371669-4adf3dd7dff8?w=200&h=200&fit=crop"
+                    },
+                    {
+                        id: 103,
+                        name: "Vòng cổ chó thông minh",
+                        price: 150000,
+                        image: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=200&h=200&fit=crop"
+                    },
+                    {
+                        id: 104,
+                        name: "Cát vệ sinh cho mèo",
+                        price: 120000,
+                        image: "https://images.unsplash.com/photo-1573865526739-10659fec78a5?w=200&h=200&fit=crop"
+                    }
+                ];
+                
+                const container = document.getElementById('suggestedProducts');
+                if (!container || cartItems.length === 0) return;
+                
+                let html = `
+                    <h2>Sản phẩm gợi ý</h2>
+                    <div class="suggested-grid">
+                `;
+                
+                suggestedProducts.forEach(product => {
+                    const inCart = cartItems.some(item => item.id == product.id);
+                    
+                    html += `
+                        <div class="suggested-item">
+                            <img src="${product.image}" alt="${product.name}">
+                            <h4>${product.name}</h4>
+                            <div class="suggested-price">${formatPrice(product.price)}₫</div>
+                            <button class="btn ${inCart ? 'btn-outline' : 'btn-primary'} add-suggested-btn" 
+                                    data-id="${product.id}" 
+                                    data-name="${product.name}" 
+                                    data-price="${product.price}" 
+                                    data-image="${product.image}"
+                                    ${inCart ? 'disabled' : ''}>
+                                ${inCart ? 'Đã có trong giỏ' : 'Thêm vào giỏ'}
+                            </button>
+                        </div>
+                    `;
+                });
+                
+                html += '</div>';
+                container.innerHTML = html;
+                
+                document.querySelectorAll('.add-suggested-btn').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        if (this.disabled) return;
+                        
+                        const productId = this.getAttribute('data-id');
+                        const productName = this.getAttribute('data-name');
+                        const productPrice = parseInt(this.getAttribute('data-price'));
+                        const productImage = this.getAttribute('data-image');
+                        
+                        addToCart(productId, productName, productPrice, productImage);
+                        this.textContent = 'Đã thêm';
+                        this.disabled = true;
+                        this.className = 'btn btn-outline add-suggested-btn';
+                        
+                        loadCartItems();
+                    });
+                });
+            }
+            
+            function formatPrice(price) {
+                return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+            }
+        });
+    </script>
+<a href="#" class="back-to-top" id="backToTop">
+    <i class="fas fa-chevron-up"></i>
+</a>
+</body>
+</html>
