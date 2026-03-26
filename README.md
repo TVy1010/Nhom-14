@@ -76,6 +76,7 @@ Ví Momo, ZaloPay.
 PETORIA10: giảm 10% cho đơn từ 200.000₫.
 PETORIA20: giảm 20% cho đơn từ 500.000₫.
 FREESHIP: miễn phí vận chuyển cho đơn từ 300.000₫.
-Liên hệ: 0947 161 824
+
+- Liên hệ: 0947 161 824
 - Link Youtube: http://www.youtube.com/@T%C6%B0%E1%BB%9DngVy-d8b
 - Link Facebook: https://www.facebook.com/bdi.edu.vn  
